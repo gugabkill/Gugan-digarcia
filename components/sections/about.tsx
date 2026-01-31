@@ -23,7 +23,7 @@ export function About() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              src="/gugan-img.jpeg"
+              src="./gugan-img.jpeg"
               alt="Dr. Gugan Pimentel Di Garcia - Advogado especialista"
               className="rounded-2xl shadow-2xl relative z-10 border border-border/20 w-full"
             />
