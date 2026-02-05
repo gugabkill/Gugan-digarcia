@@ -11,23 +11,23 @@ export function Contact() {
     {
       icon: Phone,
       title: "Telefone",
-      main: "(11) 99999-9999",
+      main: "(61) 99185-0093",
       subtitle: "WhatsApp e Ligações",
       info: "Atendimento de seg. a sex., 9h às 18h",
     },
     {
       icon: Mail,
       title: "E-mail",
-      main: "contato@advogado.com.br",
+      main: "gumido@hotmail.com",
       subtitle: "E-mail Profissional",
       info: "Resposta em até 24 horas",
     },
     {
       icon: MapPin,
       title: "Endereço",
-      main: "Av. Paulista, 1000",
-      subtitle: "São Paulo, SP",
-      info: "Atendimento presencial com agendamento",
+      main: "Vicente Pires",
+      subtitle: "Brasília, DF",
+      info: "Atendimento virtual ou presencial com agendamento",
     },
     {
       icon: Clock,
@@ -119,7 +119,7 @@ export function Contact() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   className="w-full bg-gradient-to-r from-primary via-muted to-secondary text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg text-lg py-6"
-                  onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
+                  onClick={() => window.open("https://wa.me/5561991850093", "_blank")}
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Agendar Consulta Gratuita
@@ -148,7 +148,7 @@ export function Contact() {
                 <Button
                   variant="outline"
                   className="w-full border-2 border-primary/50 hover:bg-primary/10 hover:scale-105 transition-all duration-300 text-lg py-6 bg-transparent"
-                  onClick={() => (window.location.href = "tel:+5511999999999")}
+                  onClick={() => (window.location.href = "tel:+5561991850093")}
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Ligar Agora

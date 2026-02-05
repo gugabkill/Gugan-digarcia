@@ -65,11 +65,11 @@ export function Footer() {
               </p>
               <p className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-accent" />
-                <span>(11) 99999-9999</span>
+                <span>(61) 99185-0093</span>
               </p>
               <p className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-accent" />
-                <span>contato@advogado.com.br</span>
+                <span>gumido@hotmail.com</span>
               </p>
               <p className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-accent" />

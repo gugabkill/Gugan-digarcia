@@ -125,7 +125,7 @@ export function Hero() {
                   className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-card/50 backdrop-blur-sm hover:scale-105 transition-all duration-300 w-full sm:w-auto"
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  (11) 99999-9999
+                  (61) 99185-0093
                 </Button>
               </motion.div>
             </motion.div>
