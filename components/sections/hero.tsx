@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Scale, Phone, Zap, TrendingUp, Users, Award, Eye, Instagram, Facebook, Linkedin, Gavel } from "lucide-react"
+import { Scale, Phone, Zap, TrendingUp, Users, Award, Eye, Instagram, Facebook, Linkedin, Gavel, ShieldCheck } from "lucide-react"
 
 export function Hero() {
   const [scrollY, setScrollY] = useState(0)
@@ -16,7 +16,8 @@ export function Hero() {
   }, [])
 
   const stats = [
-    { icon: TrendingUp, number: "95%", label: "Taxa de Sucesso" },
+    // { icon: TrendingUp, number: "95%", label: "Taxa de Sucesso" },
+    { icon: ShieldCheck, number: "100%", label: "Compromisso com Cada Caso" },
     { icon: Users, number: "500+", label: "Casos Resolvidos" },
     { icon: Award, number: "5+", label: "Anos de Experiência" },
     { icon: Eye, number: "24h", label: "Resposta Garantida" },
