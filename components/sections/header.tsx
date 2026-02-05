@@ -1,10 +1,10 @@
 "use client";
 
 import type React from "react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
-import { useState } from "react";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ export function Header() {
 
   const handleMenuClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
+    href: string
   ) => {
     e.preventDefault();
     setMobileMenuOpen(false);
@@ -38,26 +38,11 @@ export function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2 md:space-x-3">
-          {/* <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-primary via-muted to-secondary rounded-full flex items-center justify-center shadow-lg glow">
-            <span className="text-primary-foreground font-bold text-lg md:text-xl font-serif">
-              GP
-            </span>
-          </div>
-          <div>
-            <span className="font-serif font-bold text-base md:text-xl text-foreground">
-              Dr. Gugan Pimentel
-            </span>
-            <p className="text-[10px] md:text-xs text-muted-foreground hidden sm:block">
-              Especialista em Direito de Trânsito
-            </p>
-          </div> */}
-          <a href="/" aria-label="Cartoon Network Home">
+          <a href="/" aria-label="Página inicial">
             <img
-              src="/logo-gugan-2.png" // Caminho da imagem dentro da pasta /public
-              alt="Cartoon Network Logo"
-              width={230}
-              height={60}
-              className="cursor-pointer"
+              src="/logo-gugan-2.png"
+              alt="Logo Dr. Gugan Pimentel"
+              className="h-10 md:h-12 w-auto object-contain"
             />
           </a>
         </div>
@@ -77,16 +62,26 @@ export function Header() {
         </nav>
 
         {/* Desktop WhatsApp Button */}
-        <Button className="hidden md:flex bg-gradient-to-r from-primary via-muted to-secondary text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg glow cursor-pointer">
-          <MessageCircle className="w-4 h-4 mr-2" />
-          WhatsApp
+        <Button
+          asChild
+          className="hidden md:flex bg-gradient-to-r from-primary via-muted to-secondary text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg glow cursor-pointer"
+        >
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Agendar consulta pelo WhatsApp"
+          >
+            <MessageCircle className="w-4 h-4 mr-2" />
+            WhatsApp
+          </a>
         </Button>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="lg:hidden p-2 hover:bg-card/50 rounded-lg transition-colors"
-          aria-label="Toggle menu"
+          aria-label="Abrir menu"
         >
           {mobileMenuOpen ? (
             <X className="w-6 h-6" />
@@ -110,15 +105,18 @@ export function Header() {
                 {item.label}
               </a>
             ))}
+
+            {/* Mobile WhatsApp Button */}
             <Button
               asChild
-              className="hidden md:flex bg-gradient-to-r from-primary via-muted to-secondary text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg glow cursor-pointer"
+              className="w-full bg-gradient-to-r from-primary via-muted to-secondary text-primary-foreground mt-4"
             >
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Agendar consulta pelo WhatsApp"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 WhatsApp
