@@ -284,7 +284,7 @@ export default function DefesaBafometroPage() {
               <div className="bg-[#11114E] border border-[#D2D3D5]/20 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold text-[#D2D3D5] mb-3">Riscos de Não Agir Rapidamente</h3>
                 <ul className="space-y-2 text-[#D2D3D5]/80">
-                  <li>• Perda do prazo de defesa (15 dias)</li>
+                  <li>• Perda do prazo de defesa (30 dias)</li>
                   <li>• Confirmação automática da suspensão da CNH</li>
                   <li>• Impossibilidade de reverter a penalidade</li>
                   <li>• Comprometimento da vida profissional e pessoal</li>
