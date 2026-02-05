@@ -641,13 +641,13 @@ export default function DefesaBafometroPage() {
           >
             <h2 className="text-4xl md:text-5xl font-serif text-[#D2D3D5] mb-6">Não Deixe Sua CNH em Risco</h2>
             <p className="text-xl text-[#D2D3D5]/80 mb-8 leading-relaxed">
-              O prazo para defesa é de apenas 15 dias. Cada minuto conta. Entre em contato agora e proteja seu direito
+              O prazo para defesa é de apenas 30 dias. Cada minuto conta. Entre em contato agora e proteja seu direito
               de dirigir.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mb-8">
               <a
                 href="https://wa.me/5561999999999"
-                className="inline-flex items-center gap-3 bg-[#D2D3D5] text-[#11114E] px-10 py-5 rounded-lg text-xl font-bold hover:bg-white transition-all shadow-2xl"
+                className="inline-flex items-center gap-3 bg-[#D2D3D5] text-[#11114E] px-10 py-5 rounded-lg text-xl font-bold hover:bg-white transition-all shadow-2xl cursor-pointer"
               >
                 <Phone className="w-6 h-6" />
                 Falar com Advogado Especialista
