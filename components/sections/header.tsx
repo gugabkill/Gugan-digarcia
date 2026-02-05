@@ -58,7 +58,7 @@ export function Header() {
         </nav>
 
         {/* Desktop WhatsApp Button */}
-        <Button className="hidden md:flex bg-gradient-to-r from-primary via-muted to-secondary text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg glow">
+        <Button className="hidden md:flex bg-gradient-to-r from-primary via-muted to-secondary text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg glow cursor-pointer">
           <MessageCircle className="w-4 h-4 mr-2" />
           WhatsApp
         </Button>

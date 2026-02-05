@@ -186,7 +186,7 @@ export function Services() {
 
                   <Button
                       variant="ghost"
-                      className="w-full mt-4 md:mt-6 group-hover:bg-primary/10 transition-colors text-sm"
+                      className="w-full mt-4 md:mt-6 group-hover:bg-primary/10 transition-colors text-sm cursor-pointer"
                       onClick={() => handleServiceClick(service.slug)}
                     >
                       Saiba mais
