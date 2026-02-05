@@ -7,13 +7,11 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary via-muted to-secondary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg font-serif">GP</span>
-              </div>
-              <div>
+              <img src="/logo-gugan-1.png" className="w-80 " alt="" />
+              {/* <div>
                 <span className="font-serif font-bold text-xl">Dr. Gugan Pimentel</span>
                 <p className="text-sm text-muted-foreground">Especialista em Direito de Trânsito</p>
-              </div>
+              </div> */}
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Advogado especialista em Direito de Trânsito e Direito Veicular com mais de 5 anos de experiência.
