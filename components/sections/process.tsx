@@ -42,7 +42,7 @@ export function Process() {
     <section id="processo" className="py-24 relative overflow-hidden">
       {/* Background banner with gradient overlay */}
       <div className="absolute inset-0">
-        <img src="/elegant-law-office-interior-with-modern-design.jpg" alt="Background" className="w-full h-full object-cover" />
+        <img src="./elegant-law-office-interior-with-modern-design.jpg" alt="Background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#11114E]/95 via-[#11114E]/90 to-[#1a1a5e]/95" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#11114E] via-transparent to-transparent" />
       </div>

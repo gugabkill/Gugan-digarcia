@@ -18,7 +18,7 @@ export function Nationwide() {
           <div className="inline-flex items-center gap-2 bg-[#D2D3D5]/10 backdrop-blur-sm px-6 py-2 rounded-full border border-[#D2D3D5]/20 mb-6">
             <MapPin className="w-4 h-4 text-[#D2D3D5]" />
             <span className="text-[#D2D3D5] text-sm font-medium">Atendimento Nacional</span>
-            <img src="/logo-brasil.png" alt="" />
+            <img src="./logo-brasil.png" alt="" />
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-[#D2D3D5] mb-6">Atendimento em Todo o Brasil.  </h2>
           <p className="text-[#848688] text-lg max-w-3xl mx-auto leading-relaxed">

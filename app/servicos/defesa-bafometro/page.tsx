@@ -134,7 +134,7 @@ export default function DefesaBafometroPage() {
       {/* Hero Banner */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/police-officer-conducting-breathalyzer-test-at-nig.jpg" alt="Defesa Bafômetro" className="w-full h-full object-cover" />
+          <img src="./police-officer-conducting-breathalyzer-test-at-nig.jpg" alt="Defesa Bafômetro" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#11114E] via-[#11114E]/95 to-[#11114E]/80" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#11114E]/50 to-[#11114E]" />
         </div>

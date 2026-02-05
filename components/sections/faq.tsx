@@ -54,7 +54,7 @@ export function FAQ() {
     <section id="faq" className="py-24 relative overflow-hidden">
       {/* Background image with traffic law theme */}
       <div className="absolute inset-0 z-0">
-        <img src="/traffic-law-background.jpg" alt="Traffic Law Background" className="w-full h-full object-cover" />
+        <img src="./traffic-law-background.jpg" alt="Traffic Law Background" className="w-full h-full object-cover" />
         {/* Multiple gradient overlays for depth and readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#11114E]/95 via-[#11114E]/90 to-[#1a1a5e]/95" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#11114E] via-transparent to-[#11114E]/50" />
