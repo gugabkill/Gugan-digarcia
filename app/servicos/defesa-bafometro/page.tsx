@@ -272,7 +272,7 @@ export default function DefesaBafometroPage() {
               <div className="bg-[#11114E] border border-[#848688]/30 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold text-[#D2D3D5] mb-3">Erros Frequentes Cometidos pelos Órgãos</h3>
                 <ul className="space-y-2 text-[#D2D3D5]/80">
-                  <li>• Abordagem sem a presença de duas testemunhas</li>
+                  {/* <li>• Abordagem sem a presença de duas testemunhas</li> */}
                   <li>• Uso de equipamento sem calibração ou certificação válida</li>
                   <li>• Ausência de laudo técnico do bafômetro</li>
                   <li>• Notificação enviada fora do prazo legal</li>
