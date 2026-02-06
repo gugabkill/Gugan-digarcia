@@ -18,30 +18,32 @@ export function Footer() {
               Vice-Presidente da Comissão de Direito de Trânsito da OAB/DF.
             </p>
             <div className="flex gap-3">
-              <a
+              {/* <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent hover:scale-110 transition-all duration-300"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
+              </a> */}
               <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent hover:scale-110 transition-all duration-300"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
+                  href="https://www.facebook.com/gugan.gumido?mibextid=wwXIfr&rdid=cl0MOztV4rpXBzYH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17rKg3v1qi%2F%3Fmibextid%3DwwXIfr%26ref%3D1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-all duration-300"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+              {/* <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent hover:scale-110 transition-all duration-300"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
+              </a> */}
             </div>
           </div>
           <div>

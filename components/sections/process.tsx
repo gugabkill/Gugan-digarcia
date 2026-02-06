@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { FileSearch, MessageSquare, Gavel, CheckCircle } from "lucide-react"
+import { motion } from "framer-motion";
+import { FileSearch, MessageSquare, Gavel, CheckCircle } from "lucide-react";
 
 const steps = [
   {
@@ -32,17 +32,22 @@ const steps = [
     icon: CheckCircle,
     number: "04",
     title: "Resultado e Acompanhamento",
-    description: "Mantemos você informado sobre cada decisão e continuamos disponíveis para orientações futuras.",
+    description:
+      "Mantemos você informado sobre cada decisão e continuamos disponíveis para orientações futuras.",
     color: "from-[#848688] to-[#D2D3D5]",
   },
-]
+];
 
 export function Process() {
   return (
     <section id="processo" className="py-24 relative overflow-hidden">
       {/* Background banner with gradient overlay */}
       <div className="absolute inset-0">
-        <img src="./elegant-law-office-interior-with-modern-design.jpg" alt="Background" className="w-full h-full object-cover" />
+        <img
+          src="./elegant-law-office-interior-with-modern-design.jpg"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-[#11114E]/95 via-[#11114E]/90 to-[#1a1a5e]/95" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#11114E] via-transparent to-transparent" />
       </div>
@@ -64,9 +69,12 @@ export function Process() {
           <span className="inline-block px-4 py-2 bg-[#D2D3D5]/10 border border-[#D2D3D5]/20 rounded-full text-[#D2D3D5] text-sm font-medium mb-4">
             Como Funciona
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#D2D3D5] mb-4">Processo de Atendimento</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#D2D3D5] mb-4">
+            Processo de Atendimento
+          </h2>
           <p className="text-[#848688] text-lg max-w-2xl mx-auto">
-            Um processo transparente e eficiente, do primeiro contato até a solução do seu caso
+            Um processo transparente e eficiente, do primeiro contato até a
+            solução do seu caso
           </p>
         </motion.div>
 
@@ -86,7 +94,9 @@ export function Process() {
               <div className="group relative bg-[#11114E]/50 backdrop-blur-sm border border-[#D2D3D5]/10 rounded-2xl p-8 hover:border-[#D2D3D5]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#D2D3D5]/5 h-full">
                 {/* Number badge */}
                 <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-[#D2D3D5] to-[#848688] rounded-full flex items-center justify-center shadow-lg">
-                  <span className="font-serif text-2xl font-bold text-[#11114E]">{step.number}</span>
+                  <span className="font-serif text-2xl font-bold text-[#11114E]">
+                    {step.number}
+                  </span>
                 </div>
 
                 {/* Icon */}
@@ -120,7 +130,10 @@ export function Process() {
           className="text-center mt-16"
         >
           <a
-            href="https://wa.me/5561999999999"
+            href="https://wa.me/5561991850093?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Iniciar consulta pelo WhatsApp"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D2D3D5] to-[#848688] text-[#11114E] font-bold rounded-full hover:shadow-2xl hover:shadow-[#D2D3D5]/20 transition-all duration-300 hover:scale-105"
           >
             <MessageSquare className="w-5 h-5" />
@@ -129,5 +142,5 @@ export function Process() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

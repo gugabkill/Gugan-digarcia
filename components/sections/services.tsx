@@ -1,25 +1,42 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Gavel, TrendingUp, Car, FileText, AlertCircle, UserCheck, CheckCircle, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Shield,
+  Gavel,
+  TrendingUp,
+  Car,
+  FileText,
+  AlertCircle,
+  UserCheck,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export function Services() {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleServiceClick = (slug: string) => {
-    router.push(`/${slug}`)
-    window.scrollTo(0, 0)
-  }
+    router.push(`/${slug}`);
+    window.scrollTo(0, 0);
+  };
   const services = [
     {
       icon: Shield,
       title: "Defesa em Multa de Bafômetro (Lei Seca)",
-      description: "Análise completa do auto de infração, identificando nulidades e falhas no procedimento",
+      description:
+        "Análise completa do auto de infração, identificando nulidades e falhas no procedimento",
       features: [
         "Notificações fora do prazo legal",
         "Equipamentos sem aferição INMETRO",
@@ -32,7 +49,8 @@ export function Services() {
     {
       icon: Gavel,
       title: "Suspensão e Cassação da CNH",
-      description: "Defesa técnica em processos de suspensão ou cassação da carteira de habilitação",
+      description:
+        "Defesa técnica em processos de suspensão ou cassação da carteira de habilitação",
       features: [
         "Cálculo incorreto de pontuação",
         "Notificações inválidas ou fora do prazo",
@@ -45,7 +63,8 @@ export function Services() {
     {
       icon: TrendingUp,
       title: "Ação Revisional de Financiamento",
-      description: "Identificação de juros abusivos, tarifas irregulares e seguros embutidos sem consentimento",
+      description:
+        "Identificação de juros abusivos, tarifas irregulares e seguros embutidos sem consentimento",
       features: [
         "Redução do valor das parcelas",
         "Suspensão de cobranças ilegais",
@@ -58,7 +77,8 @@ export function Services() {
     {
       icon: Car,
       title: "Busca e Apreensão de Veículo",
-      description: "Análise jurídica para verificar a validade do procedimento de alienação fiduciária",
+      description:
+        "Análise jurídica para verificar a validade do procedimento de alienação fiduciária",
       features: [
         "Falhas na notificação de mora",
         "Irregularidades na apreensão",
@@ -71,7 +91,8 @@ export function Services() {
     {
       icon: FileText,
       title: "Defesas Administrativas no DETRAN",
-      description: "Análise técnica de autos de infração e elaboração de defesas em todas as instâncias",
+      description:
+        "Análise técnica de autos de infração e elaboração de defesas em todas as instâncias",
       features: [
         "Identificação de vícios formais e materiais",
         "Avaliação de probabilidade de êxito",
@@ -84,7 +105,8 @@ export function Services() {
     {
       icon: AlertCircle,
       title: "Responsabilidade em Acidentes",
-      description: "Defesa de condutores e busca pela reparação de danos para vítimas de acidentes",
+      description:
+        "Defesa de condutores e busca pela reparação de danos para vítimas de acidentes",
       features: [
         "Levantamento técnico de provas",
         "Identificação de responsáveis",
@@ -97,7 +119,8 @@ export function Services() {
     {
       icon: UserCheck,
       title: "Consultoria e Assistência",
-      description: "Consultoria preventiva para empresas com frotas e motoristas profissionais",
+      description:
+        "Consultoria preventiva para empresas com frotas e motoristas profissionais",
       features: [
         "Regularização de pontuação",
         "Acompanhamento de notificações",
@@ -107,10 +130,13 @@ export function Services() {
       color: "from-indigo-500/20 to-violet-500/20",
       slug: "servicos/consultoria-preventiva",
     },
-  ]
+  ];
 
   return (
-    <section id="servicos" className="py-12 md:py-24 bg-background relative overflow-hidden">
+    <section
+      id="servicos"
+      className="py-12 md:py-24 bg-background relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-transparent to-card/30 pointer-events-none" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
@@ -130,8 +156,8 @@ export function Services() {
             Serviços Especializados
           </h2>
           <p className="text-muted-foreground text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Oferecemos soluções jurídicas completas para todas as questões relacionadas ao direito de trânsito e direito
-            veicular
+            Oferecemos soluções jurídicas completas para todas as questões
+            relacionadas ao direito de trânsito e direito veicular
           </p>
         </motion.div>
 
@@ -179,19 +205,21 @@ export function Services() {
                         className="flex items-start space-x-2 md:space-x-3 text-xs md:text-sm group/item"
                       >
                         <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform" />
-                        <span className="text-muted-foreground leading-relaxed">{feature}</span>
+                        <span className="text-muted-foreground leading-relaxed">
+                          {feature}
+                        </span>
                       </motion.div>
                     ))}
                   </div>
 
                   <Button
-                      variant="ghost"
-                      className="w-full mt-4 md:mt-6 group-hover:bg-primary/10 transition-colors text-sm cursor-pointer"
-                      onClick={() => handleServiceClick(service.slug)}
-                    >
-                      Saiba mais
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    variant="ghost"
+                    className="w-full mt-4 md:mt-6 group-hover:bg-primary/10 transition-colors text-sm cursor-pointer"
+                    onClick={() => handleServiceClick(service.slug)}
+                  >
+                    Saiba mais
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </CardContent>
               </Card>
             </motion.div>
@@ -211,15 +239,27 @@ export function Services() {
                 Precisa de Assistência Jurídica?
               </h3>
               <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8 max-w-2xl mx-auto">
-                Entre em contato para uma análise detalhada do seu caso. Atuação técnica, ética e focada em resultados.
+                Entre em contato para uma análise detalhada do seu caso. Atuação
+                técnica, ética e focada em resultados.
               </p>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button
+                  asChild
                   size="lg"
                   className="bg-gradient-to-r from-primary via-muted to-secondary hover:opacity-90 transition-opacity text-primary-foreground font-semibold px-6 md:px-8 w-full sm:w-auto"
                 >
-                  Agendar Consulta
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2" />
+                  <a
+                    href="https://wa.me/5561991850093?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Agendar consulta pelo WhatsApp"
+                  >
+                    Agendar Consulta
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2" />
+                  </a>
                 </Button>
               </motion.div>
             </CardContent>
@@ -227,5 +267,5 @@ export function Services() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
