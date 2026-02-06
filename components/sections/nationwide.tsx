@@ -110,7 +110,7 @@ export function Nationwide() {
               </p>
               <Button
                 className="w-full bg-[#D2D3D5] text-[#11114E] hover:bg-[#D2D3D5]/90 font-semibold py-6 text-lg"
-                onClick={() => window.open("https://wa.me/5561999999999", "_blank")}
+                onClick={() => window.open("https://wa.me/5561991850093", "_blank")}
               >
                 <MapPin className="w-5 h-5 mr-2" />
                 Consulte Sua Região
