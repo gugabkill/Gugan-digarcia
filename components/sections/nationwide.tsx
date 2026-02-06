@@ -130,7 +130,7 @@ export function Nationwide() {
             <Button
               size="lg"
               className="bg-[#D2D3D5] text-[#11114E] hover:bg-[#D2D3D5]/90 font-semibold"
-              onClick={() => window.open("https://wa.me/5561999999999", "_blank")}
+              onClick={() => window.open("https://wa.me/5561991850093", "_blank")}
             >
               <Video className="w-5 h-5 mr-2" />
               Agendar Consulta Online
@@ -139,7 +139,7 @@ export function Nationwide() {
               size="lg"
               variant="outline"
               className="border-[#D2D3D5] text-[#D2D3D5] hover:bg-[#D2D3D5]/10 bg-transparent"
-              onClick={() => window.open("tel:+5561999999999", "_blank")}
+              onClick={() => window.open("tel:+5561991850093", "_blank")}
             >
               <Clock className="w-5 h-5 mr-2" />
               Ligar Agora
