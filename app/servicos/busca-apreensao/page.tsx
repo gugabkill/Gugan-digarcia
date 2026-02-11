@@ -633,7 +633,7 @@ export default function BuscaApreensaoPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center mb-8">
               <motion.a
-                href="https://wa.me/5561982603812"
+                href="https://wa.me/5561991850093"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-3 bg-[#D2D3D5] text-[#11114E] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white transition-all"
@@ -642,13 +642,13 @@ export default function BuscaApreensaoPage() {
                 Atendimento Urgente
               </motion.a>
               <motion.a
-                href="tel:+5561982603812"
+                href="tel:+5561991850093"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-3 border-2 border-[#D2D3D5] text-[#D2D3D5] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#D2D3D5]/10 transition-all"
               >
                 <Phone className="w-5 h-5" />
-                (61) 98260-3812
+                (61) 99185-0093
               </motion.a>
             </div>
             <div className="flex items-center justify-center gap-2 text-[#848688]">

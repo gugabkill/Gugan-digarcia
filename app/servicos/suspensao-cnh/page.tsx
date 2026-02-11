@@ -123,7 +123,7 @@ export default function SuspensaoCNHPage() {
               Dr. Gugan Pimentel
             </Link>
             <a
-              href="https://wa.me/5561999999999"
+              href="https://wa.me/5561991850093"
               className="bg-[#D2D3D5] text-[#11114E] px-6 py-2 rounded-lg font-medium hover:bg-white transition-colors"
             >
               Contato
@@ -167,7 +167,7 @@ export default function SuspensaoCNHPage() {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
-                href="https://wa.me/5561999999999"
+                href="https://wa.me/5561991850093"
                 className="inline-flex items-center gap-3 bg-[#D2D3D5] text-[#11114E] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white transition-all shadow-lg hover:shadow-xl"
               >
                 <Phone className="w-5 h-5" />
@@ -651,7 +651,7 @@ export default function SuspensaoCNHPage() {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mb-8">
               <a
-                href="https://wa.me/5561999999999"
+                href="https://wa.me/5561991850093"
                 className="inline-flex items-center gap-3 bg-[#D2D3D5] text-[#11114E] px-10 py-5 rounded-lg text-xl font-bold hover:bg-white transition-all shadow-2xl"
               >
                 <Phone className="w-6 h-6" />
@@ -683,11 +683,11 @@ export default function SuspensaoCNHPage() {
               <div className="space-y-2 text-[#848688] text-sm">
                 <p className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  (61) 99999-9999
+                  (61) 99185-0093
                 </p>
                 <p className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  contato@guganpimentel.adv.br
+                  gumido@hotmail.com
                 </p>
               </div>
             </div>
