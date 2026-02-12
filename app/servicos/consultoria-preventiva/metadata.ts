@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Consultoria e Assistência Jurídica em Trânsito | Dr. Gugan Pimentel",
     description:
       "Consultoria jurídica preventiva em trânsito para motoristas e empresas com frotas. Gestão de multas e segurança jurídica.",
-    url: "https://guganpimentel.adv.br/servicos/consultoria-preventiva",
+    url: "https://digarciadv.com.br/servicos/consultoria-preventiva",
     type: "website",
   },
 }

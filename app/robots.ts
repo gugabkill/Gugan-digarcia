@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/private/"],
     },
-    sitemap: "https://guganpimentel.adv.br/sitemap.xml",
+    sitemap: "https://digarciadv.com.br/sitemap.xml",
   }
 }

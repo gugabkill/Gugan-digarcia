@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Defesa em Busca e Apreensão de Veículo | Dr. Gugan Pimentel",
     description:
       "Advogado especialista em defesa contra busca e apreensão de veículos. Recupere seu veículo e defenda seus direitos.",
-    url: "https://guganpimentel.adv.br/servicos/busca-apreensao",
+    url: "https://digarciadv.com.br/servicos/busca-apreensao",
     type: "website",
   },
 }

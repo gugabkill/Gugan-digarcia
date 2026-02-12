@@ -2,16 +2,16 @@ export function SchemaOrg() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "@id": "https://guganpimentel.adv.br/#organization",
+    "@id": "https://digarciadv.com.br/#organization",
     name: "Dr. Gugan Pimentel Di Garcia - Advogado de Trânsito",
     alternateName: "Gugan Pimentel Advocacia",
-    url: "https://guganpimentel.adv.br",
-    logo: "https://guganpimentel.adv.br/logo.png",
-    image: "https://guganpimentel.adv.br/og-image.jpg",
+    url: "https://digarciadv.com.br",
+    logo: "https://digarciadv.com.br/logo.png",
+    image: "https://digarciadv.com.br/og-image.jpg",
     description:
       "Advogado especialista em Direito de Trânsito e Direito Veicular com mais de 5 anos de experiência. Vice-Presidente da Comissão de Direito de Trânsito da OAB/DF - Subseção Águas Claras.",
     telephone: "+55-61-99999-9999",
-    email: "contato@guganpimentel.adv.br",
+    email: "contato@digarciadv.com.br",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Águas Claras",
@@ -110,15 +110,15 @@ export function SchemaOrg() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://guganpimentel.adv.br/#person",
+    "@id": "https://digarciadv.com.br/#person",
     name: "Dr. Gugan Pimentel Di Garcia",
     jobTitle: "Advogado Especialista em Direito de Trânsito",
     description:
       "Advogado especialista em Direito de Trânsito e Direito Veicular, Vice-Presidente da Comissão de Direito de Trânsito da OAB/DF - Subseção Águas Claras. OAB/DF 79.271.",
-    url: "https://guganpimentel.adv.br",
-    image: "https://guganpimentel.adv.br/professional-lawyer-in-elegant-suit--confident-pos.png",
+    url: "https://digarciadv.com.br",
+    image: "https://digarciadv.com.br/professional-lawyer-in-elegant-suit--confident-pos.png",
     worksFor: {
-      "@id": "https://guganpimentel.adv.br/#organization",
+      "@id": "https://digarciadv.com.br/#organization",
     },
     memberOf: {
       "@type": "Organization",
@@ -145,7 +145,7 @@ export function SchemaOrg() {
         "@type": "ListItem",
         position: 1,
         name: "Início",
-        item: "https://guganpimentel.adv.br",
+        item: "https://digarciadv.com.br",
       },
     ],
   }

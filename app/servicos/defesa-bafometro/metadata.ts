@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Defesa em Multa de Bafômetro (Lei Seca) | Dr. Gugan Pimentel",
     description:
       "Advogado especialista em defesa contra multas de bafômetro e Lei Seca. Análise de nulidades, recursos administrativos e judiciais. Consulta gratuita.",
-    url: "https://guganpimentel.adv.br/servicos/defesa-bafometro",
+    url: "https://digarciadv.com.br/servicos/defesa-bafometro",
     type: "website",
   },
 }

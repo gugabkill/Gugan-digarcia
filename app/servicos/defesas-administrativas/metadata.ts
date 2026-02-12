@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Defesas Administrativas no DETRAN | Dr. Gugan Pimentel",
     description:
       "Advogado especialista em recursos e defesas administrativas no DETRAN. Contestação de multas e processos de trânsito.",
-    url: "https://guganpimentel.adv.br/servicos/defesas-administrativas",
+    url: "https://digarciadv.com.br/servicos/defesas-administrativas",
     type: "website",
   },
 }

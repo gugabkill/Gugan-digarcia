@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Suspensão e Cassação da CNH | Dr. Gugan Pimentel",
     description:
       "Advogado especialista em suspensão e cassação de CNH. Recursos administrativos, defesas técnicas e recuperação do direito de dirigir.",
-    url: "https://guganpimentel.adv.br/servicos/suspensao-cnh",
+    url: "https://digarciadv.com.br/servicos/suspensao-cnh",
     type: "website",
   },
 }

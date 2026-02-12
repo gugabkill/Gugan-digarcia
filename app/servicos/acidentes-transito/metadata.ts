@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Responsabilidade em Acidentes de Trânsito | Dr. Gugan Pimentel",
     description:
       "Advogado especialista em acidentes de trânsito. Defesa de condutores, reparação de danos e negociação com seguradoras.",
-    url: "https://guganpimentel.adv.br/servicos/acidentes-transito",
+    url: "https://digarciadv.com.br/servicos/acidentes-transito",
     type: "website",
   },
 }

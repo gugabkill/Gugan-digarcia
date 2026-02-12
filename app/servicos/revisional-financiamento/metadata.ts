@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Ação Revisional de Financiamento de Veículo | Dr. Gugan Pimentel",
     description:
       "Advogado especialista em revisão de financiamento de veículos. Redução de juros abusivos, parcelas e devolução de valores.",
-    url: "https://guganpimentel.adv.br/servicos/revisional-financiamento",
+    url: "https://digarciadv.com.br/servicos/revisional-financiamento",
     type: "website",
   },
 }
