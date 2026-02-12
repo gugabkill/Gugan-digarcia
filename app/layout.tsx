@@ -21,7 +21,8 @@ const lato = Lato({
 export const metadata: Metadata = {
   metadataBase: new URL("https://guganpimentel.adv.br"),
   title: {
-    default: "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito - OAB/DF 79.271",
+    default:
+      "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito - OAB/DF 79.271",
     template: "%s | Dr. Gugan Pimentel Di Garcia - Advogado de Trânsito",
   },
   description:
@@ -44,7 +45,12 @@ export const metadata: Metadata = {
     "direito de trânsito",
     "direito veicular",
   ],
-  authors: [{ name: "Dr. Gugan Pimentel Di Garcia", url: "https://guganpimentel.adv.br" }],
+  authors: [
+    {
+      name: "Dr. Gugan Pimentel Di Garcia",
+      url: "https://guganpimentel.adv.br",
+    },
+  ],
   creator: "Dr. Gugan Pimentel Di Garcia",
   publisher: "Dr. Gugan Pimentel Di Garcia",
   formatDetection: {
@@ -60,7 +66,8 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "https://guganpimentel.adv.br",
     siteName: "Dr. Gugan Pimentel Di Garcia - Advogado de Trânsito",
-    title: "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito",
+    title:
+      "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito",
     description:
       "Advogado especialista em Direito de Trânsito e Veicular em Brasília/DF. Defesa em multas, suspensão e cassação de CNH, busca e apreensão. Atendimento em todo o Brasil.",
     images: [
@@ -91,7 +98,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "seu-codigo-google-search-console",
+    google: "Zy1IWzgtVfhput-Ra3mIKp0SOG3w3tx9BMSrRy8qRtA",
   },
   category: "Advocacia",
 }
@@ -103,7 +110,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`font-sans ${montserrat.variable} ${lato.variable} antialiased`}>
+      <body
+        className={`font-sans ${montserrat.variable} ${lato.variable} antialiased`}
+      >
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
