@@ -19,7 +19,7 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://guganpimentel.adv.br"),
+  metadataBase: new URL("https://www.digarciadv.com.br"),
   title: {
     default:
       "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito - OAB/DF 79.271",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Dr. Gugan Pimentel Di Garcia",
-      url: "https://guganpimentel.adv.br",
+      url: "https://www.digarciadv.com.br",
     },
   ],
   creator: "Dr. Gugan Pimentel Di Garcia",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://guganpimentel.adv.br",
+    url: "https://www.digarciadv.com.br",
     siteName: "Dr. Gugan Pimentel Di Garcia - Advogado de Trânsito",
     title:
       "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito",
