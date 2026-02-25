@@ -22,23 +22,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.digarciadv.com.br"),
 
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-    ],
+    icon: [{ url: "/favicon.ico" }],
     shortcut: ["/favicon.ico"],
     apple: ["/favicon.ico"],
   },
 
   title: {
-    default:
-      "Dr. Gugan Pimentel Di Garcia",  //| Advogado Especialista em Direito de Trânsito - OAB/DF 79.271
+    default: "Dr. Gugan Pimentel Di Garcia",
     template: "%s | Dr. Gugan Pimentel Di Garcia - Advogado de Trânsito",
   },
 
   description:
     "Advogado especialista em Direito de Trânsito e Veicular em Brasília/DF. Defesa em multas, suspensão e cassação de CNH, busca e apreensão, revisão de financiamento. Atendimento em todo o Brasil. Consulta gratuita.",
-
-  generator: "v0.app",
 
   keywords: [
     "advogado de trânsito",
@@ -68,12 +63,6 @@ export const metadata: Metadata = {
   creator: "Dr. Gugan Pimentel Di Garcia",
   publisher: "Dr. Gugan Pimentel Di Garcia",
 
-  formatDetection: {
-    email: true,
-    address: true,
-    telephone: true,
-  },
-
   alternates: {
     canonical: "/",
   },
@@ -86,55 +75,65 @@ export const metadata: Metadata = {
     title:
       "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito",
     description:
-      "Advogado especialista em Direito de Trânsito e Veicular em Brasília/DF. Defesa em multas, suspensão e cassação de CNH, busca e apreensão. Atendimento em todo o Brasil.",
+      "Advogado especialista em Direito de Trânsito e Veicular em Brasília/DF.",
     images: [
       {
         url: "/gugan-img.jpeg",
         width: 1200,
         height: 630,
-        alt: "Dr. Gugan Pimentel Di Garcia - Advogado Especialista em Direito de Trânsito",
+        alt: "Dr. Gugan Pimentel Di Garcia",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Gugan Pimentel Di Garcia | Advogado de Trânsito",
-    description:
-      "Advogado especialista em Direito de Trânsito e Veicular. Defesa em multas, suspensão de CNH, busca e apreensão. Atendimento em todo o Brasil.",
     images: ["/gugan-img.jpeg"],
   },
 
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 
   verification: {
     google: "Zy1IWzgtVfhput-Ra3mIKp0SOG3w3tx9BMSrRy8qRtA",
   },
-
-  category: "Advocacia",
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="pt-BR">
       <body
         className={`font-sans ${montserrat.variable} ${lato.variable} antialiased`}
       >
         <Suspense fallback={null}>{children}</Suspense>
+
+        {/* Structured Data para Google exibir a logo */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LegalService",
+              name: "Dr. Gugan Pimentel Di Garcia",
+              url: "https://www.digarciadv.com.br",
+              logo: "https://www.digarciadv.com.br/logo.png",
+              image: "https://www.digarciadv.com.br/logo.png",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Brasília",
+                addressRegion: "DF",
+                addressCountry: "BR",
+              },
+            }),
+          }}
+        />
+
         <Analytics />
       </body>
     </html>
