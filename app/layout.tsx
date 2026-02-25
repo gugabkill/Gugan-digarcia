@@ -72,7 +72,7 @@ export const metadata: Metadata = {
       "Advogado especialista em Direito de Trânsito e Veicular em Brasília/DF. Defesa em multas, suspensão e cassação de CNH, busca e apreensão. Atendimento em todo o Brasil.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/gugan-img.jpeg",
         width: 1200,
         height: 630,
         alt: "Dr. Gugan Pimentel Di Garcia - Advogado Especialista em Direito de Trânsito",
