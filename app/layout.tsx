@@ -20,14 +20,26 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.digarciadv.com.br"),
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: ["/favicon.ico"],
+  },
+
   title: {
     default:
-      "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito - OAB/DF 79.271",
+      "Dr. Gugan Pimentel Di Garcia",  //| Advogado Especialista em Direito de Trânsito - OAB/DF 79.271
     template: "%s | Dr. Gugan Pimentel Di Garcia - Advogado de Trânsito",
   },
+
   description:
     "Advogado especialista em Direito de Trânsito e Veicular em Brasília/DF. Defesa em multas, suspensão e cassação de CNH, busca e apreensão, revisão de financiamento. Atendimento em todo o Brasil. Consulta gratuita.",
+
   generator: "v0.app",
+
   keywords: [
     "advogado de trânsito",
     "advogado trânsito Brasília",
@@ -45,22 +57,27 @@ export const metadata: Metadata = {
     "direito de trânsito",
     "direito veicular",
   ],
+
   authors: [
     {
       name: "Dr. Gugan Pimentel Di Garcia",
       url: "https://www.digarciadv.com.br",
     },
   ],
+
   creator: "Dr. Gugan Pimentel Di Garcia",
   publisher: "Dr. Gugan Pimentel Di Garcia",
+
   formatDetection: {
     email: true,
     address: true,
     telephone: true,
   },
+
   alternates: {
     canonical: "/",
   },
+
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -79,13 +96,15 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Dr. Gugan Pimentel Di Garcia | Advogado de Trânsito",
     description:
       "Advogado especialista em Direito de Trânsito e Veicular. Defesa em multas, suspensão de CNH, busca e apreensão. Atendimento em todo o Brasil.",
-    images: ["/og-image.jpg"],
+    images: ["/gugan-img.jpeg"],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -97,9 +116,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
   verification: {
     google: "Zy1IWzgtVfhput-Ra3mIKp0SOG3w3tx9BMSrRy8qRtA",
   },
+
   category: "Advocacia",
 }
 
