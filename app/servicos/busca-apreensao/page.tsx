@@ -128,7 +128,7 @@ export default function BuscaApreensaoPage() {
               Dr. Gugan Pimentel
             </Link>
             <a
-              href="https://wa.me/5561982603812"
+              href="https://wa.me/5561991850093"
               className="bg-[#D2D3D5] text-[#11114E] px-6 py-2 rounded-lg font-medium hover:bg-white transition-colors"
             >
               Contato
@@ -167,7 +167,7 @@ export default function BuscaApreensaoPage() {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
-                href="https://wa.me/5561982603812"
+                href="https://wa.me/5561991850093"
                 className="inline-flex items-center gap-3 bg-[#D2D3D5] text-[#11114E] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white transition-all shadow-lg hover:shadow-xl"
               >
                 <Phone className="w-5 h-5" />
