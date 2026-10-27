@@ -20,6 +20,7 @@ import {
   Handshake,
 } from "lucide-react"
 import Link from "next/link"
+import { AdvogadoResponsavel } from "@/components/sections/advogado-responsavel"
 import { useState, useEffect } from "react"
 
 export default function AcidentesTransitoPage() {
@@ -207,6 +208,9 @@ export default function AcidentesTransitoPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Advogado responsável */}
+      <AdvogadoResponsavel textoServico="Atuo em ações de indenização por acidentes de trânsito, buscando a reparação de danos materiais, lucros cessantes e danos morais. Cuido de cada etapa para que você seja ressarcido de forma justa." />
 
       {/* Quando procurar */}
       <section className="py-16">
