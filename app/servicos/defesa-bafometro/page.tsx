@@ -17,6 +17,7 @@ import {
   Lock,
 } from "lucide-react"
 import Link from "next/link"
+import { AdvogadoResponsavel } from "@/components/sections/advogado-responsavel"
 import { useState, useEffect } from "react"
 
 export default function DefesaBafometroPage() {
@@ -206,6 +207,9 @@ export default function DefesaBafometroPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Advogado responsável */}
+      <AdvogadoResponsavel textoServico="Atuo diariamente em defesas de Lei Seca: teste positivo, recusa ao bafômetro e suspensão da CNH. Analiso cada detalhe da abordagem e do processo para construir a defesa mais forte possível, na esfera administrativa e, se preciso, na Justiça." />
 
       {/* Quando procurar */}
       <section className="py-16">
