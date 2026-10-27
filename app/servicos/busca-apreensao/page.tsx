@@ -21,6 +21,7 @@ import {
   HandshakeIcon,
 } from "lucide-react"
 import Link from "next/link"
+import { AdvogadoResponsavel } from "@/components/sections/advogado-responsavel"
 import { useState, useEffect } from "react"
 
 export default function BuscaApreensaoPage() {
@@ -207,6 +208,9 @@ export default function BuscaApreensaoPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Advogado responsável */}
+      <AdvogadoResponsavel textoServico="Atuo na defesa de quem teve o veículo apreendido ou está sob risco de busca e apreensão. Analiso o contrato, a notificação e cada prazo do processo para agir rápido e proteger o seu veículo." />
 
       {/* Quando procurar */}
       <section className="py-16">
