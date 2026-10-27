@@ -21,8 +21,8 @@ export function AdvogadoResponsavel({ textoServico }: AdvogadoResponsavelProps) 
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-10 md:gap-12 items-center">
           {/* Foto */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="relative md:col-span-2 max-w-sm mx-auto w-full"
@@ -37,8 +37,8 @@ export function AdvogadoResponsavel({ textoServico }: AdvogadoResponsavelProps) 
 
           {/* Texto */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="md:col-span-3"
