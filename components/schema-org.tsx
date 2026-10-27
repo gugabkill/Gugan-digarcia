@@ -10,7 +10,7 @@ export function SchemaOrg() {
     image: "https://digarciadv.com.br/og-image.jpg",
     description:
       "Advogado especialista em Direito de Trânsito e Direito Veicular com mais de 5 anos de experiência. Vice-Presidente da Comissão de Direito de Trânsito da OAB/DF - Subseção Águas Claras.",
-    telephone: "+55-61-99999-9999",
+    telephone: "+55-61-99185-0093",
     email: "contato@digarciadv.com.br",
     address: {
       "@type": "PostalAddress",
