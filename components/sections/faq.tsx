@@ -146,7 +146,7 @@ export function FAQ() {
               Entre em contato conosco e teremos prazer em esclarecer todas as suas dúvidas
             </p>
             <a
-              href="https://wa.me/5561999999999"
+              href="https://wa.me/5561991850093"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D2D3D5] to-[#848688] text-[#11114E] font-bold rounded-full hover:shadow-2xl hover:shadow-[#D2D3D5]/20 transition-all duration-300 hover:scale-105"
             >
               Falar com Especialista
