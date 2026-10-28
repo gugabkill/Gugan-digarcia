@@ -213,7 +213,7 @@ export default function BuscaApreensaoPage() {
       <AdvogadoResponsavel textoServico="Atuo na defesa de quem teve o veículo apreendido ou está sob risco de busca e apreensão. Analiso o contrato, a notificação e cada prazo do processo para agir rápido e proteger o seu veículo." />
 
       {/* Quando procurar */}
-      <section className="py-16">
+      <section id="quando-procurar" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -302,7 +302,7 @@ export default function BuscaApreensaoPage() {
       </section>
 
       {/* Como Funciona */}
-      <section className="py-16">
+      <section id="como-funciona" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -520,7 +520,7 @@ export default function BuscaApreensaoPage() {
       </section>
 
       {/* Documentos */}
-      <section className="py-16">
+      <section id="documentos" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -547,7 +547,7 @@ export default function BuscaApreensaoPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-[#1a1a5e]/30">
+      <section id="duvidas" className="scroll-mt-24 py-16 bg-[#1a1a5e]/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
