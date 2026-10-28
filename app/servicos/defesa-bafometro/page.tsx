@@ -212,7 +212,7 @@ export default function DefesaBafometroPage() {
       <AdvogadoResponsavel textoServico="Atuo diariamente em defesas de Lei Seca: teste positivo, recusa ao bafômetro e suspensão da CNH. Analiso cada detalhe da abordagem e do processo para construir a defesa mais forte possível, na esfera administrativa e, se preciso, na Justiça." />
 
       {/* Quando procurar */}
-      <section className="py-16">
+      <section id="quando-procurar" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -301,7 +301,7 @@ export default function DefesaBafometroPage() {
       </section>
 
       {/* Como Funciona */}
-      <section className="py-16">
+      <section id="como-funciona" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -521,7 +521,7 @@ export default function DefesaBafometroPage() {
       </section>
 
       {/* Documentos Necessários */}
-      <section className="py-16">
+      <section id="documentos" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -551,7 +551,7 @@ export default function DefesaBafometroPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-[#1a1a5e]/30">
+      <section id="duvidas" className="scroll-mt-24 py-16 bg-[#1a1a5e]/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
