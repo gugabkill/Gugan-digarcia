@@ -213,7 +213,7 @@ export default function AcidentesTransitoPage() {
       <AdvogadoResponsavel textoServico="Atuo em ações de indenização por acidentes de trânsito, buscando a reparação de danos materiais, lucros cessantes e danos morais. Cuido de cada etapa para que você seja ressarcido de forma justa." />
 
       {/* Quando procurar */}
-      <section className="py-16">
+      <section id="quando-procurar" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -302,7 +302,7 @@ export default function AcidentesTransitoPage() {
       </section>
 
       {/* Tipos de Danos */}
-      <section className="py-16">
+      <section id="danos" className="scroll-mt-24 py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -347,7 +347,7 @@ export default function AcidentesTransitoPage() {
       </section>
 
       {/* Como Funciona */}
-      <section className="py-16 bg-[#1a1a5e]/30">
+      <section id="como-funciona" className="scroll-mt-24 py-16 bg-[#1a1a5e]/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -531,7 +531,7 @@ export default function AcidentesTransitoPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-[#1a1a5e]/30">
+      <section id="duvidas" className="scroll-mt-24 py-16 bg-[#1a1a5e]/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
