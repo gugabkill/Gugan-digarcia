@@ -85,7 +85,7 @@ const fade = {
   transition: { duration: 0.8 },
 }
 
-const slides = ["/brand/slide-1.jpg", "/brand/slide-2.jpg", "/brand/slide-3.jpg", "/brand/slide-4.jpg"]
+const slides = ["/brand/slide-1.jpg", "/brand/slide-2.jpg", "/brand/slide-3.jpg"]
 
 function HeroSlides() {
   const [i, setI] = useState(0)
