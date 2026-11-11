@@ -34,7 +34,7 @@ const linhas = [
 
 export function QuandoProcurar() {
   return (
-    <section id="quando-procurar" className="py-16 md:py-24 bg-card/30">
+    <section id="quando-procurar" className="tema-claro py-16 md:py-24 bg-[#f5f6fa]">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,7 +55,7 @@ export function QuandoProcurar() {
         </motion.div>
 
         {/* Cabeçalho da tabela (desktop) */}
-        <div className="hidden md:grid grid-cols-12 gap-6 px-6 pb-3 text-xs uppercase tracking-widest text-[#848688]">
+        <div className="hidden md:grid grid-cols-12 gap-6 px-6 pb-3 text-xs uppercase tracking-widest text-[#5b5f7a]">
           <div className="col-span-3">Situação</div>
           <div className="col-span-5">O que pode ser abusivo</div>
           <div className="col-span-4">O que fazer agora</div>
@@ -69,15 +69,15 @@ export function QuandoProcurar() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="grid md:grid-cols-12 gap-3 md:gap-6 rounded-2xl border border-[#D2D3D5]/10 bg-[#11114E]/50 p-5 md:p-6 hover:border-[#D2D3D5]/30 transition-colors"
+              className="grid md:grid-cols-12 gap-3 md:gap-6 rounded-2xl border border-[#11114E]/10 bg-white p-5 md:p-6 hover:border-[#11114E]/30 transition-colors"
             >
-              <div className="md:col-span-3 font-serif font-bold text-lg text-[#D2D3D5]">{l.situacao}</div>
-              <div className="md:col-span-5 flex gap-3 text-[#848688]">
-                <AlertTriangle className="w-5 h-5 text-[#D2D3D5]/70 flex-shrink-0 mt-0.5" />
+              <div className="md:col-span-3 font-serif font-bold text-lg text-[#11114E]">{l.situacao}</div>
+              <div className="md:col-span-5 flex gap-3 text-[#5b5f7a]">
+                <AlertTriangle className="w-5 h-5 text-[#11114E]/70 flex-shrink-0 mt-0.5" />
                 <span>{l.abuso}</span>
               </div>
-              <div className="md:col-span-4 flex gap-3 text-[#D2D3D5]/90">
-                <CheckCircle2 className="w-5 h-5 text-[#D2D3D5] flex-shrink-0 mt-0.5" />
+              <div className="md:col-span-4 flex gap-3 text-[#11114E]/90">
+                <CheckCircle2 className="w-5 h-5 text-[#11114E] flex-shrink-0 mt-0.5" />
                 <span>{l.agora}</span>
               </div>
             </motion.div>

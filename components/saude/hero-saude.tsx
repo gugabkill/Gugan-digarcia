@@ -22,23 +22,23 @@ const documentos = [
 
 export function HeroSaude() {
   return (
-    <section id="inicio" className="pt-20 pb-16 relative overflow-hidden min-h-screen flex items-center">
+    <section id="inicio" className="tema-claro bg-white pt-20 pb-16 relative overflow-hidden min-h-screen flex items-center">
       {/* Fundo: azul do site com padrão discreto de cruzes */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0b0b38] via-background to-[#1a1a5e]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f4f5fa] via-white to-[#eceef6]" />
       <div
-        className="absolute inset-0 opacity-[0.07]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath d='M26 20h4v6h6v4h-6v6h-4v-6h-6v-4h6z' fill='%23D2D3D5'/%3E%3C/svg%3E\")",
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath d='M26 20h4v6h6v4h-6v6h-4v-6h-6v-4h6z' fill='%2311114E'/%3E%3C/svg%3E\")",
         }}
       />
       <motion.div
         aria-hidden
         animate={{ opacity: [0.25, 0.45, 0.25], scale: [1, 1.08, 1] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-32 right-[-10%] w-[640px] h-[640px] rounded-full bg-[#848688]/20 blur-3xl"
+        className="absolute -top-32 right-[-10%] w-[640px] h-[640px] rounded-full bg-[#11114E]/10 blur-3xl"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white" />
 
       {/* Linha de pulso animada */}
       <svg
@@ -50,7 +50,7 @@ export function HeroSaude() {
         <motion.path
           d="M0 50 H420 L450 50 L470 20 L495 85 L520 10 L545 70 L565 50 H1200"
           fill="none"
-          stroke="#D2D3D5"
+          stroke="#11114E"
           strokeWidth="2"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
@@ -67,7 +67,7 @@ export function HeroSaude() {
             className="space-y-5 md:space-y-7"
           >
             <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <Badge className="bg-gradient-to-r from-primary via-muted to-secondary shimmer text-xs md:text-sm text-white">
+              <Badge className="bg-gradient-to-r from-primary via-muted to-secondary text-xs md:text-sm text-white border-0">
                 <HeartPulse className="w-3 h-3 md:w-4 md:h-4 mr-2 text-white" />
                 Direito da Saúde e Ações contra Planos de Saúde
               </Badge>
@@ -77,7 +77,7 @@ export function HeroSaude() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.6rem] font-serif font-bold text-balance leading-tight drop-shadow-2xl"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.6rem] font-serif font-bold text-balance leading-tight"
             >
               Seu plano de saúde negou o
               <span className="text-transparent bg-gradient-to-r from-primary via-muted to-secondary bg-clip-text">
@@ -160,14 +160,14 @@ export function HeroSaude() {
             className="relative hidden lg:block"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-muted/30 to-secondary/30 rounded-3xl blur-3xl" />
-            <div className="relative rounded-3xl border border-[#D2D3D5]/15 bg-[#11114E]/70 backdrop-blur-md p-8 shadow-2xl">
+            <div className="relative rounded-3xl border border-[#11114E]/15 bg-white shadow-[0_20px_60px_-25px_rgba(17,17,78,0.35)] p-8 shadow-2xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D2D3D5] to-[#848688] flex items-center justify-center">
                   <FileSearch className="w-6 h-6 text-[#11114E]" />
                 </div>
                 <div>
-                  <div className="font-serif font-bold text-xl text-[#D2D3D5]">Recebeu uma negativa?</div>
-                  <div className="text-sm text-[#848688]">Separe estes documentos para a análise</div>
+                  <div className="font-serif font-bold text-xl text-[#11114E]">Recebeu uma negativa?</div>
+                  <div className="text-sm text-[#5b5f7a]">Separe estes documentos para a análise</div>
                 </div>
               </div>
               <div className="space-y-3">
@@ -177,12 +177,12 @@ export function HeroSaude() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1.1 + i * 0.15 }}
-                    className="flex items-center gap-4 rounded-xl border border-[#D2D3D5]/10 bg-[#0b0b38]/60 p-4 hover:border-[#D2D3D5]/30 transition-colors"
+                    className="flex items-center gap-4 rounded-xl border border-[#11114E]/10 bg-[#f5f6fa] p-4 hover:border-[#11114E]/30 transition-colors"
                   >
-                    <d.icon className="w-5 h-5 text-[#D2D3D5] flex-shrink-0" />
+                    <d.icon className="w-5 h-5 text-[#11114E] flex-shrink-0" />
                     <div>
-                      <div className="font-semibold text-[#D2D3D5]">{d.title}</div>
-                      <div className="text-sm text-[#848688]">{d.text}</div>
+                      <div className="font-semibold text-[#11114E]">{d.title}</div>
+                      <div className="text-sm text-[#5b5f7a]">{d.text}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -191,7 +191,7 @@ export function HeroSaude() {
                 href={WA_SAUDE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D2D3D5] to-[#848688] py-3 font-bold text-[#11114E] hover:scale-[1.02] transition-transform"
+                className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#11114E] to-[#2C3056] py-3 font-bold text-white hover:scale-[1.02] transition-transform"
               >
                 Enviar documentos pelo WhatsApp
               </a>

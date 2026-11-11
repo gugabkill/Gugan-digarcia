@@ -16,7 +16,7 @@ const colors = [
 
 export function AtuacaoSaude() {
   return (
-    <section id="atuacao" className="py-12 md:py-24 bg-background relative overflow-hidden">
+    <section id="atuacao" className="tema-claro py-12 md:py-24 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-transparent to-card/30 pointer-events-none" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />

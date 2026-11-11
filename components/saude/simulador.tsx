@@ -9,7 +9,7 @@ import { waLink } from "@/lib/saude"
 type Escolha = "sim" | "nao" | ""
 
 const field =
-  "w-full rounded-xl bg-[#0b0b38]/70 border border-[#D2D3D5]/15 px-4 py-3 text-[#D2D3D5] placeholder:text-[#848688] focus:outline-none focus:border-[#D2D3D5]/50 transition-colors"
+  "w-full rounded-xl bg-[#f5f6fa] border border-[#11114E]/15 px-4 py-3 text-[#11114E] placeholder:text-[#8a8da3] focus:outline-none focus:border-[#11114E]/50 transition-colors"
 
 function parseValor(s: string) {
   const limpo = s.replace(/[^\d,.]/g, "").replace(/\./g, "").replace(",", ".")
@@ -42,8 +42,8 @@ function Opcoes({
           onClick={() => onChange(o.v)}
           className={`px-4 py-2 rounded-full border text-sm font-medium transition-all ${
             value === o.v
-              ? "bg-[#D2D3D5] text-[#11114E] border-[#D2D3D5]"
-              : "border-[#D2D3D5]/20 text-[#D2D3D5] hover:border-[#D2D3D5]/50"
+              ? "bg-[#11114E] text-white border-[#11114E]"
+              : "border-[#11114E]/20 text-[#11114E] hover:border-[#11114E]/50 bg-white"
           }`}
         >
           {o.label}
@@ -137,7 +137,7 @@ export function Simulador() {
     : ""
 
   return (
-    <section id="simulador" className="py-16 md:py-24 relative">
+    <section id="simulador" className="tema-claro bg-[#f5f6fa] py-16 md:py-24 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -146,13 +146,13 @@ export function Simulador() {
           transition={{ duration: 0.8 }}
           className="text-center mb-10"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#D2D3D5]/10 border border-[#D2D3D5]/20 rounded-full text-[#D2D3D5] text-sm font-medium mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#11114E]/5 border border-[#11114E]/20 rounded-full text-[#11114E] text-sm font-medium mb-4">
             <Calculator className="w-4 h-4" /> Simulador gratuito
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#D2D3D5] mb-4 text-balance">
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#11114E] mb-4 text-balance">
             Quanto o seu plano subiu além do permitido?
           </h2>
-          <p className="text-[#848688] text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[#5b5f7a] text-base md:text-lg max-w-2xl mx-auto">
             Para planos no nome de empresa ou MEI que atendem só a sua família. Comparamos a sua mensalidade com o
             limite que a ANS autoriza para planos individuais e familiares.
           </p>
@@ -165,14 +165,14 @@ export function Simulador() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-3 rounded-3xl border border-[#D2D3D5]/15 bg-[#11114E]/70 backdrop-blur-md p-6 md:p-8 shadow-2xl space-y-6"
+            className="lg:col-span-3 rounded-3xl border border-[#11114E]/15 bg-white shadow-[0_20px_60px_-25px_rgba(17,17,78,0.35)] p-6 md:p-8 shadow-2xl space-y-6"
           >
             <div className="space-y-2">
-              <label className="font-semibold text-[#D2D3D5]">1. O plano está no nome de uma empresa ou MEI?</label>
+              <label className="font-semibold text-[#11114E]">1. O plano está no nome de uma empresa ou MEI?</label>
               <Opcoes value={cnpj} onChange={(v) => setCnpj(v as Escolha)} options={[{ v: "sim", label: "Sim" }, { v: "nao", label: "Não" }]} />
             </div>
             <div className="space-y-2">
-              <label className="font-semibold text-[#D2D3D5]">2. Quantas pessoas estão no plano?</label>
+              <label className="font-semibold text-[#11114E]">2. Quantas pessoas estão no plano?</label>
               <Opcoes
                 value={vidas}
                 onChange={setVidas}
@@ -180,16 +180,16 @@ export function Simulador() {
               />
             </div>
             <div className="space-y-2">
-              <label className="font-semibold text-[#D2D3D5]">3. Todos são da mesma família?</label>
+              <label className="font-semibold text-[#11114E]">3. Todos são da mesma família?</label>
               <Opcoes value={familia} onChange={(v) => setFamilia(v as Escolha)} options={[{ v: "sim", label: "Sim" }, { v: "nao", label: "Não" }]} />
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2 md:col-span-2">
-                <label className="font-semibold text-[#D2D3D5]">4. Operadora do plano (opcional)</label>
+                <label className="font-semibold text-[#11114E]">4. Operadora do plano (opcional)</label>
                 <input className={field} placeholder="Ex.: Amil, Bradesco, Unimed" value={operadora} onChange={(e) => setOperadora(e.target.value)} />
               </div>
               <div className="space-y-2 md:col-span-2">
-                <label className="font-semibold text-[#D2D3D5]">5. Quando o contrato começou?</label>
+                <label className="font-semibold text-[#11114E]">5. Quando o contrato começou?</label>
                 <div className="grid grid-cols-2 gap-3">
                   <select className={field} value={mes} onChange={(e) => setMes(e.target.value)}>
                     <option value="">Mês</option>
@@ -208,30 +208,30 @@ export function Simulador() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="font-semibold text-[#D2D3D5]">6. Mensalidade no início</label>
+                <label className="font-semibold text-[#11114E]">6. Mensalidade no início</label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#848688]">R$</span>
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#5b5f7a]">R$</span>
                   <input className={`${field} pl-11`} inputMode="numeric" placeholder="0,00" value={inicial} onChange={(e) => setInicial(mascara(e.target.value))} />
                 </div>
-                <p className="text-xs text-[#848688]">Some todas as pessoas. Pode ser um valor aproximado.</p>
+                <p className="text-xs text-[#5b5f7a]">Some todas as pessoas. Pode ser um valor aproximado.</p>
               </div>
               <div className="space-y-2">
-                <label className="font-semibold text-[#D2D3D5]">7. Mensalidade atual</label>
+                <label className="font-semibold text-[#11114E]">7. Mensalidade atual</label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#848688]">R$</span>
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#5b5f7a]">R$</span>
                   <input className={`${field} pl-11`} inputMode="numeric" placeholder="0,00" value={atual} onChange={(e) => setAtual(mascara(e.target.value))} />
                 </div>
-                <p className="text-xs text-[#848688]">O valor total do último boleto.</p>
+                <p className="text-xs text-[#5b5f7a]">O valor total do último boleto.</p>
               </div>
             </div>
-            <label className="flex items-start gap-3 text-sm text-[#848688] cursor-pointer select-none">
-              <input type="checkbox" checked={ciente} onChange={(e) => setCiente(e.target.checked)} className="w-5 h-5 mt-0.5 accent-[#D2D3D5]" />
+            <label className="flex items-start gap-3 text-sm text-[#5b5f7a] cursor-pointer select-none">
+              <input type="checkbox" checked={ciente} onChange={(e) => setCiente(e.target.checked)} className="w-5 h-5 mt-0.5 accent-[#11114E]" />
               Entendo que o resultado é uma estimativa e não substitui a análise de um advogado.
             </label>
-            {erro && <p className="text-sm font-semibold text-[#ffb4b4]">{erro}</p>}
+            {erro && <p className="text-sm font-semibold text-red-600">{erro}</p>}
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-gradient-to-r from-[#D2D3D5] to-[#848688] text-[#11114E] font-bold text-lg hover:scale-[1.02] transition-transform"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-gradient-to-r from-[#11114E] to-[#2C3056] text-white font-bold text-lg hover:scale-[1.02] transition-transform"
             >
               <Calculator className="w-5 h-5" />
               Simular agora
@@ -245,17 +245,17 @@ export function Simulador() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="lg:col-span-2 space-y-4"
           >
-            <div className="rounded-2xl border border-[#D2D3D5]/10 bg-[#0b0b38]/60 p-6">
-              <div className="font-serif font-bold text-lg text-[#D2D3D5] mb-3">Como funciona</div>
-              <ol className="space-y-3 text-sm text-[#848688] list-decimal pl-5">
+            <div className="rounded-2xl border border-[#11114E]/10 bg-[#f5f6fa] p-6">
+              <div className="font-serif font-bold text-lg text-[#11114E] mb-3">Como funciona</div>
+              <ol className="space-y-3 text-sm text-[#5b5f7a] list-decimal pl-5">
                 <li>Você informa quando o plano começou e quanto pagava no início.</li>
                 <li>Aplicamos, ano a ano, o teto de reajuste da ANS para planos individuais.</li>
                 <li>Comparamos com o que você paga hoje e somamos a diferença dos últimos 3 anos.</li>
               </ol>
             </div>
-            <div className="rounded-2xl border border-[#D2D3D5]/10 bg-[#0b0b38]/60 p-6 flex gap-3">
-              <ShieldCheck className="w-6 h-6 text-[#D2D3D5] flex-shrink-0" />
-              <p className="text-sm text-[#848688]">
+            <div className="rounded-2xl border border-[#11114E]/10 bg-[#f5f6fa] p-6 flex gap-3">
+              <ShieldCheck className="w-6 h-6 text-[#11114E] flex-shrink-0" />
+              <p className="text-sm text-[#5b5f7a]">
                 O cálculo é feito no seu próprio aparelho. Nenhum dado é enviado ao escritório, a não ser que você
                 decida mandar o resultado pelo WhatsApp.
               </p>
@@ -274,16 +274,16 @@ export function Simulador() {
               transition={{ duration: 0.6 }}
               className="max-w-6xl mx-auto mt-10 scroll-mt-28"
             >
-              <div className="rounded-3xl border border-[#D2D3D5]/25 bg-gradient-to-br from-[#1a1a5e] to-[#11114E] p-6 md:p-10 shadow-2xl">
+              <div className="rounded-3xl border border-[#11114E]/25 bg-white shadow-[0_20px_60px_-25px_rgba(17,17,78,0.35)] p-6 md:p-10 shadow-2xl">
                 <div className="text-center mb-8">
-                  <div className="text-sm uppercase tracking-widest text-[#848688] mb-2">
+                  <div className="text-sm uppercase tracking-widest text-[#5b5f7a] mb-2">
                     Você pode ter pago a mais, entre {MESES[res.periodoInicio.mes]}/{res.periodoInicio.ano} e{" "}
                     {MESES[res.periodoFim.mes]}/{res.periodoFim.ano}
                   </div>
-                  <div className="font-serif font-bold text-4xl md:text-6xl text-[#D2D3D5]">
+                  <div className="font-serif font-bold text-4xl md:text-6xl text-[#11114E]">
                     <Contador valor={res.totalPagoAMais} />
                   </div>
-                  <div className="text-sm text-[#848688] mt-2">Estimativa da soma das diferenças nos últimos 36 meses</div>
+                  <div className="text-sm text-[#5b5f7a] mt-2">Estimativa da soma das diferenças nos últimos 36 meses</div>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
@@ -292,17 +292,17 @@ export function Simulador() {
                     { k: "Pelo teto da ANS seria", v: brl(res.mensalidadePelaAns) },
                     { k: "Diferença por mês", v: brl(res.diferencaMensal) },
                   ].map((x) => (
-                    <div key={x.k} className="rounded-2xl bg-[#0b0b38]/60 border border-[#D2D3D5]/10 p-5 text-center">
-                      <div className="text-sm text-[#848688] mb-1">{x.k}</div>
-                      <div className="font-serif font-bold text-2xl text-[#D2D3D5]">{x.v}</div>
+                    <div key={x.k} className="rounded-2xl bg-[#f5f6fa] border border-[#11114E]/10 p-5 text-center">
+                      <div className="text-sm text-[#5b5f7a] mb-1">{x.k}</div>
+                      <div className="font-serif font-bold text-2xl text-[#11114E]">{x.v}</div>
                     </div>
                   ))}
                 </div>
 
                 {avisos.length > 0 && (
-                  <div className="flex gap-3 rounded-2xl border border-[#D2D3D5]/20 bg-[#D2D3D5]/5 p-4 mb-6">
-                    <Info className="w-5 h-5 text-[#D2D3D5] flex-shrink-0 mt-0.5" />
-                    <div className="space-y-1 text-sm text-[#D2D3D5]/90">
+                  <div className="flex gap-3 rounded-2xl border border-[#11114E]/20 bg-[#11114E]/5 p-4 mb-6">
+                    <Info className="w-5 h-5 text-[#11114E] flex-shrink-0 mt-0.5" />
+                    <div className="space-y-1 text-sm text-[#11114E]/90">
                       {avisos.map((a) => (
                         <p key={a}>{a}</p>
                       ))}
@@ -315,7 +315,7 @@ export function Simulador() {
                     href={waLink(mensagem)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#D2D3D5] to-[#848688] text-[#11114E] font-bold hover:scale-105 transition-transform"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#11114E] to-[#2C3056] text-white font-bold hover:scale-105 transition-transform"
                   >
                     <MessageCircle className="w-5 h-5" />
                     Quero uma avaliação jurídica
@@ -323,7 +323,7 @@ export function Simulador() {
                   <button
                     type="button"
                     onClick={limpar}
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-[#D2D3D5]/30 text-[#D2D3D5] hover:bg-[#D2D3D5]/10 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-[#11114E]/30 text-[#11114E] hover:bg-[#11114E]/5 transition-colors"
                   >
                     <RotateCcw className="w-4 h-4" />
                     Fazer nova simulação
@@ -333,7 +333,7 @@ export function Simulador() {
                 <button
                   type="button"
                   onClick={() => setTabela(!tabela)}
-                  className="mx-auto flex items-center gap-2 text-sm text-[#848688] hover:text-[#D2D3D5]"
+                  className="mx-auto flex items-center gap-2 text-sm text-[#5b5f7a] hover:text-[#11114E]"
                 >
                   Ver como calculamos
                   <ChevronDown className={`w-4 h-4 transition-transform ${tabela ? "rotate-180" : ""}`} />
@@ -346,9 +346,9 @@ export function Simulador() {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 overflow-x-auto rounded-xl border border-[#D2D3D5]/10">
+                      <div className="mt-4 overflow-x-auto rounded-xl border border-[#11114E]/10">
                         <table className="w-full text-sm text-left">
-                          <thead className="bg-[#0b0b38]/80 text-[#848688] uppercase text-xs tracking-wider">
+                          <thead className="bg-[#eef0f6] text-[#5b5f7a] uppercase text-xs tracking-wider">
                             <tr>
                               <th className="px-4 py-3">Aniversário</th>
                               <th className="px-4 py-3">Teto ANS</th>
@@ -356,14 +356,14 @@ export function Simulador() {
                               <th className="px-4 py-3">Estimativa do que foi cobrado</th>
                             </tr>
                           </thead>
-                          <tbody className="text-[#D2D3D5]/90">
+                          <tbody className="text-[#11114E]/90">
                             {res.aniversarios.length === 0 && (
                               <tr>
                                 <td colSpan={4} className="px-4 py-3">O contrato ainda não completou um ano.</td>
                               </tr>
                             )}
                             {res.aniversarios.map((a) => (
-                              <tr key={a.ano} className="border-t border-[#D2D3D5]/5">
+                              <tr key={a.ano} className="border-t border-[#11114E]/5">
                                 <td className="px-4 py-2">{MESES[a.mes]}/{a.ano}</td>
                                 <td className="px-4 py-2">{a.indice.toLocaleString("pt-BR")}%</td>
                                 <td className="px-4 py-2">{brl(a.pelaAns)}</td>
@@ -373,7 +373,7 @@ export function Simulador() {
                           </tbody>
                         </table>
                       </div>
-                      <p className="text-xs text-[#848688] mt-3 leading-relaxed">
+                      <p className="text-xs text-[#5b5f7a] mt-3 leading-relaxed">
                         Como o simulador só conhece a mensalidade inicial e a atual, os reajustes cobrados são estimados
                         por uma média anual. Reajustes por mudança de faixa etária e inclusão de pessoas podem alterar o
                         resultado. O valor real depende da análise dos boletos e do contrato e não é garantia de

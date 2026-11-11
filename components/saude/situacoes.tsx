@@ -16,7 +16,7 @@ const situacoes = [
 
 export function Situacoes() {
   return (
-    <section id="situacoes" className="py-16 md:py-24 bg-card/30 relative overflow-hidden">
+    <section id="situacoes" className="tema-claro py-16 md:py-24 bg-[#f5f6fa] relative overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

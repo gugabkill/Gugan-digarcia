@@ -194,3 +194,25 @@
 /* .glow {
   animation: glow 2s ease-in-out infinite alternate;
 } */
+
+/* Tema claro das páginas de Direito da Saúde (aplicado por seção) */
+.tema-claro {
+  --background: #ffffff;
+  --foreground: #11114e;
+  --card: #ffffff;
+  --card-foreground: #11114e;
+  --popover: #ffffff;
+  --popover-foreground: #11114e;
+  --primary: #11114e;
+  --primary-foreground: #ffffff;
+  --secondary: #2c3056;
+  --secondary-foreground: #ffffff;
+  --muted: #2c3056;
+  --muted-foreground: #5b5f7a;
+  --accent: #11114e;
+  --accent-foreground: #ffffff;
+  --border: #dfe1ea;
+  --input: #f5f6fa;
+  --ring: #11114e;
+  color: var(--foreground);
+}

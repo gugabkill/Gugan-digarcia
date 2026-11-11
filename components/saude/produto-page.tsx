@@ -8,7 +8,7 @@ import { Header } from "@/components/sections/header"
 import { Footer } from "@/components/sections/footer"
 import { WhatsAppButton } from "@/components/sections/whatsapp-button"
 import { Process } from "@/components/sections/process"
-import { FAQ } from "@/components/sections/faq"
+import { FaqClaro } from "@/components/saude/faq-claro"
 import { FundoSaude } from "@/components/saude/fundo-saude"
 import { UrgenciaBanner } from "@/components/saude/urgencia-banner"
 import { SobreSaude } from "@/components/saude/sobre-saude"
@@ -26,7 +26,7 @@ export function ProdutoPage({ slug }: { slug: string }) {
       <Header menuItems={produtoMenu} whatsappLink={wa} />
 
       {/* Topo */}
-      <section id="inicio" className="pt-20 pb-20 relative overflow-hidden min-h-[92vh] flex items-center">
+      <section id="inicio" className="tema-claro bg-white pt-20 pb-20 relative overflow-hidden min-h-[92vh] flex items-center">
         <FundoSaude />
         <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
           <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -37,12 +37,12 @@ export function ProdutoPage({ slug }: { slug: string }) {
               className="space-y-5 md:space-y-7"
             >
               <a href="/saude" className="inline-block">
-                <Badge className="bg-gradient-to-r from-primary via-muted to-secondary shimmer text-xs md:text-sm text-white">
+                <Badge className="bg-gradient-to-r from-primary via-muted to-secondary text-xs md:text-sm text-white border-0">
                   <HeartPulse className="w-3 h-3 md:w-4 md:h-4 mr-2 text-white" />
                   {p.badge}
                 </Badge>
               </a>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.6rem] font-serif font-bold text-balance leading-tight drop-shadow-2xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.6rem] font-serif font-bold text-balance leading-tight">
                 {p.h1}
                 <span className="text-transparent bg-gradient-to-r from-primary via-muted to-secondary bg-clip-text">
                   {" "}
@@ -97,9 +97,9 @@ export function ProdutoPage({ slug }: { slug: string }) {
               className="relative"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-muted/30 to-secondary/30 rounded-3xl blur-3xl" />
-              <div className="relative rounded-3xl border border-[#D2D3D5]/15 bg-[#11114E]/70 backdrop-blur-md p-6 md:p-8 shadow-2xl">
-                <div className="font-serif font-bold text-xl md:text-2xl text-[#D2D3D5] mb-1">Você pode ter direito se:</div>
-                <div className="text-sm text-[#848688] mb-5">Basta uma dessas situações para valer a análise</div>
+              <div className="relative rounded-3xl border border-[#11114E]/15 bg-white shadow-[0_20px_60px_-25px_rgba(17,17,78,0.35)] p-6 md:p-8 shadow-2xl">
+                <div className="font-serif font-bold text-xl md:text-2xl text-[#11114E] mb-1">Você pode ter direito se:</div>
+                <div className="text-sm text-[#5b5f7a] mb-5">Basta uma dessas situações para valer a análise</div>
                 <div className="space-y-3">
                   {p.direitoSe.map((d, i) => (
                     <motion.div
@@ -107,10 +107,10 @@ export function ProdutoPage({ slug }: { slug: string }) {
                       initial={{ opacity: 0, y: 14 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.9 + i * 0.12 }}
-                      className="flex items-start gap-3 rounded-xl border border-[#D2D3D5]/10 bg-[#0b0b38]/60 p-4"
+                      className="flex items-start gap-3 rounded-xl border border-[#11114E]/10 bg-[#f5f6fa] p-4"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#D2D3D5] flex-shrink-0 mt-0.5" />
-                      <span className="text-[#D2D3D5]">{d}</span>
+                      <CheckCircle className="w-5 h-5 text-[#11114E] flex-shrink-0 mt-0.5" />
+                      <span className="text-[#11114E]">{d}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -118,7 +118,7 @@ export function ProdutoPage({ slug }: { slug: string }) {
                   href={wa}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D2D3D5] to-[#848688] py-3 font-bold text-[#11114E] hover:scale-[1.02] transition-transform"
+                  className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#11114E] to-[#2C3056] py-3 font-bold text-white hover:scale-[1.02] transition-transform"
                 >
                   Quero que analisem o meu caso
                   <ArrowRight className="w-4 h-4" />
@@ -132,7 +132,7 @@ export function ProdutoPage({ slug }: { slug: string }) {
       <UrgenciaBanner />
 
       {/* Casos */}
-      <section id="casos" className="py-16 md:py-24 relative overflow-hidden">
+      <section id="casos" className="tema-claro bg-white py-16 md:py-24 relative overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -170,7 +170,7 @@ export function ProdutoPage({ slug }: { slug: string }) {
       </section>
 
       {/* Direitos */}
-      <section id="direitos" className="py-16 md:py-24 bg-card/30">
+      <section id="direitos" className="tema-claro py-16 md:py-24 bg-[#f5f6fa]">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
             <motion.div
@@ -224,27 +224,27 @@ export function ProdutoPage({ slug }: { slug: string }) {
       />
 
       {/* Documentos */}
-      <section id="documentos" className="py-16 md:py-24">
+      <section id="documentos" className="tema-claro bg-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto rounded-3xl border border-[#D2D3D5]/15 bg-[#11114E]/60 p-6 md:p-10 shadow-2xl"
+            className="max-w-4xl mx-auto rounded-3xl border border-[#11114E]/15 bg-white shadow-[0_20px_60px_-25px_rgba(17,17,78,0.3)] p-6 md:p-10 shadow-2xl"
           >
             <div className="flex items-center gap-3 mb-2">
-              <FileCheck2 className="w-7 h-7 text-[#D2D3D5]" />
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#D2D3D5]">O que separar para a análise</h2>
+              <FileCheck2 className="w-7 h-7 text-[#11114E]" />
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#11114E]">O que separar para a análise</h2>
             </div>
-            <p className="text-[#848688] mb-6">
+            <p className="text-[#5b5f7a] mb-6">
               Não tem tudo? Sem problema. Comece pelo que tiver em mãos e a gente orienta o resto.
             </p>
             <div className="grid md:grid-cols-2 gap-3">
               {p.documentos.map((d) => (
-                <div key={d} className="flex items-start gap-3 rounded-xl bg-[#0b0b38]/60 border border-[#D2D3D5]/10 p-4">
-                  <CheckCircle className="w-5 h-5 text-[#D2D3D5] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#D2D3D5]/90">{d}</span>
+                <div key={d} className="flex items-start gap-3 rounded-xl bg-[#f5f6fa] border border-[#11114E]/10 p-4">
+                  <CheckCircle className="w-5 h-5 text-[#11114E] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#11114E]/90">{d}</span>
                 </div>
               ))}
             </div>
@@ -252,7 +252,7 @@ export function ProdutoPage({ slug }: { slug: string }) {
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D2D3D5] to-[#848688] text-[#11114E] font-bold rounded-full hover:scale-105 transition-transform"
+              className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#11114E] to-[#2C3056] text-white font-bold rounded-full hover:scale-105 transition-transform"
             >
               Enviar documentos pelo WhatsApp
               <ArrowRight className="w-4 h-4" />
@@ -263,13 +263,7 @@ export function ProdutoPage({ slug }: { slug: string }) {
 
       <SobreSaude />
 
-      <FAQ
-        id="duvidas"
-        faqs={p.faqs}
-        subtitle={`Dúvidas comuns sobre ${p.problema.toLowerCase()}`}
-        backgroundImage="/professional-consultation-meeting-with-documents.jpg"
-        ctaHref={wa}
-      />
+      <FaqClaro faqs={p.faqs} subtitle={`Dúvidas comuns sobre ${p.problema.toLowerCase()}`} ctaHref={wa} />
 
       <ContatoSaude defaultProblema={p.problema} title={p.contatoTitulo} />
 

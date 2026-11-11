@@ -8,7 +8,7 @@ import { Header } from "@/components/sections/header"
 import { Footer } from "@/components/sections/footer"
 import { WhatsAppButton } from "@/components/sections/whatsapp-button"
 import { Process } from "@/components/sections/process"
-import { FAQ } from "@/components/sections/faq"
+import { FaqClaro } from "@/components/saude/faq-claro"
 import { FundoSaude } from "@/components/saude/fundo-saude"
 import { Simulador } from "@/components/saude/simulador"
 import { SobreSaude } from "@/components/saude/sobre-saude"
@@ -100,18 +100,18 @@ export function ReajustePage() {
     <div className="min-h-screen bg-background">
       <Header menuItems={menu} whatsappLink={WA} />
 
-      <section id="inicio" className="pt-20 pb-16 relative overflow-hidden min-h-[88vh] flex items-center">
+      <section id="inicio" className="tema-claro bg-white pt-20 pb-16 relative overflow-hidden min-h-[88vh] flex items-center">
         <FundoSaude />
         <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
           <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="space-y-5 md:space-y-7">
               <a href="/saude" className="inline-block">
-                <Badge className="bg-gradient-to-r from-primary via-muted to-secondary shimmer text-xs md:text-sm text-white">
+                <Badge className="bg-gradient-to-r from-primary via-muted to-secondary text-xs md:text-sm text-white border-0">
                   <HeartPulse className="w-3 h-3 md:w-4 md:h-4 mr-2 text-white" />
                   Reajuste abusivo e falso coletivo
                 </Badge>
               </a>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.6rem] font-serif font-bold text-balance leading-tight drop-shadow-2xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.6rem] font-serif font-bold text-balance leading-tight">
                 O seu plano de saúde
                 <span className="text-transparent bg-gradient-to-r from-primary via-muted to-secondary bg-clip-text"> subiu demais?</span>
               </h1>
@@ -141,14 +141,14 @@ export function ReajustePage() {
 
             <motion.div initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }} className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-muted/30 to-secondary/30 rounded-3xl blur-3xl" />
-              <div className="relative rounded-3xl border border-[#D2D3D5]/15 bg-[#11114E]/70 backdrop-blur-md p-6 md:p-8 shadow-2xl">
+              <div className="relative rounded-3xl border border-[#11114E]/15 bg-white shadow-[0_20px_60px_-25px_rgba(17,17,78,0.35)] p-6 md:p-8 shadow-2xl">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D2D3D5] to-[#848688] flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-[#11114E]" />
                   </div>
                   <div>
-                    <div className="font-serif font-bold text-xl text-[#D2D3D5]">Sinais de falso coletivo</div>
-                    <div className="text-sm text-[#848688]">Se você se identificou, vale simular</div>
+                    <div className="font-serif font-bold text-xl text-[#11114E]">Sinais de falso coletivo</div>
+                    <div className="text-sm text-[#5b5f7a]">Se você se identificou, vale simular</div>
                   </div>
                 </div>
                 <div className="space-y-3">
@@ -158,16 +158,16 @@ export function ReajustePage() {
                       initial={{ opacity: 0, y: 14 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.9 + i * 0.12 }}
-                      className="flex items-start gap-3 rounded-xl border border-[#D2D3D5]/10 bg-[#0b0b38]/60 p-4"
+                      className="flex items-start gap-3 rounded-xl border border-[#11114E]/10 bg-[#f5f6fa] p-4"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#D2D3D5] flex-shrink-0 mt-0.5" />
-                      <span className="text-[#D2D3D5]">{s}</span>
+                      <CheckCircle className="w-5 h-5 text-[#11114E] flex-shrink-0 mt-0.5" />
+                      <span className="text-[#11114E]">{s}</span>
                     </motion.div>
                   ))}
                 </div>
                 <a
                   href="#simulador"
-                  className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D2D3D5] to-[#848688] py-3 font-bold text-[#11114E] hover:scale-[1.02] transition-transform"
+                  className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#11114E] to-[#2C3056] py-3 font-bold text-white hover:scale-[1.02] transition-transform"
                 >
                   Ir para o simulador
                   <ArrowRight className="w-4 h-4" />
@@ -181,7 +181,7 @@ export function ReajustePage() {
       <Simulador />
 
       {/* O que é */}
-      <section id="falso-coletivo" className="py-16 md:py-24 bg-card/30">
+      <section id="falso-coletivo" className="tema-claro py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -235,7 +235,7 @@ export function ReajustePage() {
       </section>
 
       {/* Outros reajustes */}
-      <section id="reajustes" className="py-16 md:py-24">
+      <section id="reajustes" className="tema-claro bg-[#f5f6fa] py-16 md:py-24">
         <div className="container mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center mb-12">
             <Badge className="bg-gradient-to-r from-primary via-muted to-secondary text-primary-foreground mb-4 md:mb-6">Outros casos</Badge>
@@ -272,20 +272,20 @@ export function ReajustePage() {
         ctaHref={WA}
       />
 
-      <section id="documentos" className="py-16 md:py-24">
+      <section id="documentos" className="tema-claro bg-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto rounded-3xl border border-[#D2D3D5]/15 bg-[#11114E]/60 p-6 md:p-10 shadow-2xl"
+            className="max-w-4xl mx-auto rounded-3xl border border-[#11114E]/15 bg-white shadow-[0_20px_60px_-25px_rgba(17,17,78,0.3)] p-6 md:p-10 shadow-2xl"
           >
             <div className="flex items-center gap-3 mb-2">
-              <FileCheck2 className="w-7 h-7 text-[#D2D3D5]" />
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#D2D3D5]">O que separar para a análise</h2>
+              <FileCheck2 className="w-7 h-7 text-[#11114E]" />
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#11114E]">O que separar para a análise</h2>
             </div>
-            <p className="text-[#848688] mb-6">Não tem tudo? Sem problema. A gente ajuda a pedir o que faltar à operadora.</p>
+            <p className="text-[#5b5f7a] mb-6">Não tem tudo? Sem problema. A gente ajuda a pedir o que faltar à operadora.</p>
             <div className="grid md:grid-cols-2 gap-3">
               {[
                 "Contrato ou proposta de adesão do plano",
@@ -293,9 +293,9 @@ export function ReajustePage() {
                 "Um boleto antigo, de preferência o primeiro",
                 "Os boletos mais recentes e as cartas de reajuste",
               ].map((d) => (
-                <div key={d} className="flex items-start gap-3 rounded-xl bg-[#0b0b38]/60 border border-[#D2D3D5]/10 p-4">
-                  <CheckCircle className="w-5 h-5 text-[#D2D3D5] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#D2D3D5]/90">{d}</span>
+                <div key={d} className="flex items-start gap-3 rounded-xl bg-[#f5f6fa] border border-[#11114E]/10 p-4">
+                  <CheckCircle className="w-5 h-5 text-[#11114E] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#11114E]/90">{d}</span>
                 </div>
               ))}
             </div>
@@ -305,13 +305,7 @@ export function ReajustePage() {
 
       <SobreSaude />
 
-      <FAQ
-        id="duvidas"
-        faqs={faqs}
-        subtitle="Dúvidas comuns sobre reajuste abusivo e falso coletivo"
-        backgroundImage="/professional-consultation-meeting-with-documents.jpg"
-        ctaHref={WA}
-      />
+      <FaqClaro faqs={faqs} subtitle="Dúvidas comuns sobre reajuste abusivo e falso coletivo" ctaHref={WA} />
 
       <ContatoSaude defaultProblema="Reajuste abusivo" title="Reajuste alto no plano? Fale com a gente." />
 

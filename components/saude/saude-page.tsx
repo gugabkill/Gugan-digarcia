@@ -6,7 +6,7 @@ import { Footer } from "@/components/sections/footer"
 import { WhatsAppButton } from "@/components/sections/whatsapp-button"
 import { Process } from "@/components/sections/process"
 import { Nationwide } from "@/components/sections/nationwide"
-import { FAQ } from "@/components/sections/faq"
+import { FaqClaro } from "@/components/saude/faq-claro"
 import { HeroSaude } from "@/components/saude/hero-saude"
 import { Situacoes } from "@/components/saude/situacoes"
 import { AtuacaoSaude } from "@/components/saude/atuacao-saude"
@@ -88,13 +88,7 @@ export function SaudePage() {
           "Atendimento por videochamada quando necessário",
         ]}
       />
-      <FAQ
-        id="duvidas"
-        faqs={faqs}
-        subtitle="Respostas para as dúvidas mais comuns sobre planos de saúde e os seus direitos"
-        backgroundImage="/professional-consultation-meeting-with-documents.jpg"
-        ctaHref={WA_SAUDE}
-      />
+      <FaqClaro faqs={faqs} subtitle="Respostas para as dúvidas mais comuns sobre planos de saúde e os seus direitos" ctaHref={WA_SAUDE} />
       <ContatoSaude />
       <Footer
         description="Di Garcia Advocacia. Atuação especializada em Direito da Saúde, com foco em ações contra planos de saúde, e em Direito de Trânsito. Atendimento em todo o Brasil."
