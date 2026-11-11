@@ -72,8 +72,9 @@ const secoes: { titulo: string; corpo: React.ReactNode }[] = [
     titulo: "6. Por quanto tempo guardamos",
     corpo: (
       <p>
-        Pelo tempo necessário ao atendimento e ao cumprimento de obrigações legais. Contatos que não resultarem em
-        contratação são excluídos em até 12 meses.
+        Pelo tempo necessário às finalidades descritas nesta política, ao cumprimento de obrigações legais e ao
+        exercício regular de direitos, inclusive em processos judiciais e administrativos. Encerrado esse período, os
+        dados são excluídos ou anonimizados.
       </p>
     ),
   },
