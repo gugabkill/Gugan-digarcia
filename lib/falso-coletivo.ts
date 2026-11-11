@@ -1,8 +1,11 @@
 /**
  * Teto de reajuste da ANS para planos individuais e familiares, por ciclo.
  * O índice do ano X vale para os aniversários de maio do ano X até abril do ano X+1.
+ * Conferido em 11/11/2026 com a ANS (2026: 5,11%, maio/2026 a abril/2027) e com os
+ * históricos publicados pelas operadoras. Atualizar todo ano, quando a ANS divulgar o novo teto.
  */
 export const ANS: Record<number, number> = {
+  2010: 6.73,
   2011: 7.69,
   2012: 7.93,
   2013: 9.04,

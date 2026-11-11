@@ -154,13 +154,13 @@ export default function ConsultoriaFrotasPage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link
-              href="/#servicos"
+              href="/transito#servicos"
               className="flex items-center gap-2 text-[#D2D3D5] hover:text-white transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium">Voltar</span>
             </Link>
-            <Link href="/" className="text-2xl font-serif text-[#D2D3D5]">
+            <Link href="/transito" className="text-2xl font-serif text-[#D2D3D5]">
               Dr. Gugan Pimentel
             </Link>
             <a

@@ -377,7 +377,7 @@ export function Simulador() {
                         Como o simulador só conhece a mensalidade inicial e a atual, os reajustes cobrados são estimados
                         por uma média anual. Reajustes por mudança de faixa etária e inclusão de pessoas podem alterar o
                         resultado. O valor real depende da análise dos boletos e do contrato e não é garantia de
-                        resultado em processo.
+                        resultado em processo. Índices: teto de reajuste da ANS para planos individuais e familiares, de 2010 a 2026.
                       </p>
                     </motion.div>
                   )}
