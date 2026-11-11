@@ -3,13 +3,14 @@
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Pill, Activity, Home, TrendingUp, CheckCircle, ArrowRight } from "lucide-react"
+import { Pill, Activity, Home, TrendingUp, Puzzle, CheckCircle, ArrowRight } from "lucide-react"
 import { saudeProdutos } from "@/lib/saude"
 
-const icons = [Pill, Activity, Home, TrendingUp]
+const icons = [Pill, Activity, Puzzle, Home, TrendingUp]
 const colors = [
   "from-sky-500/20 to-cyan-500/20",
   "from-indigo-500/20 to-blue-500/20",
+  "from-violet-500/15 to-indigo-500/15",
   "from-emerald-500/20 to-teal-500/20",
   "from-slate-400/20 to-zinc-500/20",
 ]
@@ -41,7 +42,7 @@ export function AtuacaoSaude() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {saudeProdutos.map((p, index) => {
             const Icon = icons[index]
             return (
@@ -53,7 +54,7 @@ export function AtuacaoSaude() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="block"
+                className="block w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]"
               >
                 <Card className="hover:shadow-2xl transition-all duration-500 border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card/80 group relative overflow-hidden h-full">
                   <div

@@ -263,7 +263,7 @@ export function ProdutoPage({ slug }: { slug: string }) {
 
       <SobreSaude />
 
-      <FaqClaro faqs={p.faqs} subtitle={`Dúvidas comuns sobre ${p.problema.toLowerCase()}`} ctaHref={wa} />
+      <FaqClaro faqs={p.faqs} subtitle={`Dúvidas comuns sobre ${p.problema.charAt(0).toLowerCase() + p.problema.slice(1)}`} ctaHref={wa} />
 
       <ContatoSaude defaultProblema={p.problema} title={p.contatoTitulo} />
 

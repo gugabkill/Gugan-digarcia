@@ -46,7 +46,7 @@ export function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('./luxury-car-detail-with-legal-scales-symbol-overlay.png')",
+            "url('/luxury-car-detail-with-legal-scales-symbol-overlay.png')",
           // transform: `translateY(${scrollY * 0.3}px)`,
         }}
       />

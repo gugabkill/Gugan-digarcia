@@ -49,7 +49,7 @@ const areas = [
     eyebrow: "Área de atuação",
     title: "Direito da Saúde",
     text: "Atuação contra negativas e abusos de planos de saúde, com pedido de liminar quando há urgência.",
-    itens: ["Medicamento negado", "Cirurgia e exame negados", "Home care", "Reajuste abusivo e falso coletivo"],
+    itens: ["Medicamento negado", "Cirurgia e exame negados", "Terapias para autismo (TEA)", "Reajuste abusivo e falso coletivo"],
     pattern:
       "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cpath d='M26 20h4v6h6v4h-6v6h-4v-6h-6v-4h6z' fill='%23D2D3D5'/%3E%3C/svg%3E\")",
   },

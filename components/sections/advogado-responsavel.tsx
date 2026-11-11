@@ -11,7 +11,7 @@ type AdvogadoResponsavelProps = {
 const destaques = [
   { icon: Award, titulo: "OAB/DF 79.271", subtitulo: "Registro profissional" },
   { icon: Scale, titulo: "Vice-Presidente", subtitulo: "Comissão de Direito de Trânsito da OAB/DF, Subseção Águas Claras" },
-  { icon: MapPin, titulo: "Águas Claras, Brasília/DF", subtitulo: "Atendimento presencial e online" },
+  { icon: MapPin, titulo: "Todo o Brasil", subtitulo: "Atendimento online e presencial com agendamento" },
 ]
 
 export function AdvogadoResponsavel({ textoServico }: AdvogadoResponsavelProps) {

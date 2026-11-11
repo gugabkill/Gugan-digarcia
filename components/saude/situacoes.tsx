@@ -8,6 +8,7 @@ import { WA_SAUDE } from "@/lib/saude"
 const situacoes = [
   "O plano negou um medicamento prescrito pelo seu médico, inclusive de alto custo",
   "A cirurgia, o exame ou o procedimento indicado foi recusado ou está parado na autorização",
+  "As terapias do seu filho com autismo foram negadas ou limitadas pelo plano",
   "O pedido de home care foi negado, ou as horas de enfermagem foram reduzidas",
   "A internação foi recusada por carência, ou a alta veio antes da hora",
   "A mensalidade subiu muito acima do índice autorizado pela ANS",

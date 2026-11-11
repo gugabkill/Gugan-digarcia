@@ -60,7 +60,7 @@ export function Process({
       {/* Background banner with gradient overlay */}
       <div className="absolute inset-0">
         <img
-          src="./elegant-law-office-interior-with-modern-design.jpg"
+          src="/elegant-law-office-interior-with-modern-design.jpg"
           alt="Background"
           className="w-full h-full object-cover"
         />

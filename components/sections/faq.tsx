@@ -53,7 +53,7 @@ export function FAQ({
   faqs = defaultFaqs,
   id = "faq",
   subtitle = "Respostas para as dúvidas mais comuns sobre direito de trânsito e nossos serviços",
-  backgroundImage = "./traffic-law-background.jpg",
+  backgroundImage = "/traffic-law-background.jpg",
   ctaHref = "https://wa.me/5561991850093",
 }: { faqs?: Faq[]; id?: string; subtitle?: string; backgroundImage?: string; ctaHref?: string } = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)

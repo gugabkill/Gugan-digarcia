@@ -43,6 +43,18 @@ export const saudeProdutos = [
     ],
   },
   {
+    slug: "autismo-tea",
+    title: "Terapias para Autismo (TEA)",
+    description:
+      "Terapias negadas ou limitadas para crianças e adultos com Transtorno do Espectro Autista.",
+    features: [
+      "Terapia ABA negada",
+      "Limite de sessões de fono, TO e psicologia",
+      "Rede sem profissional capacitado",
+      "Coparticipação abusiva",
+    ],
+  },
+  {
     slug: "home-care",
     title: "Home Care Negado",
     description:

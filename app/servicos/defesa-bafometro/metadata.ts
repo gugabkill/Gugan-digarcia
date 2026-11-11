@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Defesa em Multa de Bafômetro (Lei Seca)",
   description:
-    "Advogado especialista em defesa contra multas de bafômetro e Lei Seca em Brasília/DF. Análise de nulidades, recursos administrativos e judiciais. Taxa de sucesso de 95%. Consulta gratuita.",
+    "Advogado especialista em defesa contra multas de bafômetro e Lei Seca em Brasília/DF. Análise de nulidades, recursos administrativos e judiciais. Atendimento em todo o Brasil.",
   keywords: [
     "multa bafômetro",
     "defesa Lei Seca",

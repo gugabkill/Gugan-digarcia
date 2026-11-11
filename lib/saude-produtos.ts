@@ -17,6 +17,13 @@ import {
   Package,
   Wind,
   Users,
+  Puzzle,
+  Brain,
+  MessagesSquare,
+  Hand,
+  Music,
+  Receipt,
+  Building2,
   type LucideIcon,
 } from "lucide-react"
 import { waLink } from "@/lib/saude"
@@ -192,6 +199,89 @@ export const produtos: Record<string, Produto> = {
       title: "Plano de Saúde Negou Cirurgia ou Exame | Advogado | Di Garcia Advocacia",
       description:
         "Plano de saúde negou cirurgia, exame ou procedimento? Atuação especializada com pedido de liminar em casos urgentes. Atendimento urgente 24h em todo o Brasil.",
+    },
+  },
+
+  "autismo-tea": {
+    slug: "autismo-tea",
+    problema: "Terapias para autismo (TEA)",
+    waMessage:
+      "Olá! Vim pelo site. O plano de saúde negou ou limitou as terapias do meu filho com autismo (TEA) e gostaria de uma análise do caso.",
+    badge: "Autismo (TEA) e terapias negadas",
+    h1: "O plano negou ou limitou as terapias do seu",
+    h1Destaque: "filho com autismo?",
+    subtitulo:
+      "Crianças e adultos com Transtorno do Espectro Autista têm direito às terapias indicadas pelo médico, sem limite de sessões. Atuamos para garantir o tratamento completo, com pedido de liminar quando ele não pode esperar.",
+    direitoSe: [
+      "O médico indicou terapias como ABA, fono, TO ou psicologia",
+      "O plano negou, limitou as sessões ou mandou esperar",
+      "A rede do plano não tem profissional capacitado perto de você",
+      "A coparticipação ficou tão alta que inviabiliza o tratamento",
+    ],
+    casosTitulo: "Situações que mais atendemos",
+    casos: [
+      { icon: Puzzle, title: "Terapia ABA negada", text: "Recusa do método indicado pelo médico ou troca por outro." },
+      { icon: Hand, title: "Limite de sessões", text: "Plano que limita fono, TO ou psicologia por ano ou por mês." },
+      { icon: MessagesSquare, title: "Fono, TO e psicologia", text: "Terapias multidisciplinares negadas ou reduzidas." },
+      { icon: Music, title: "Musicoterapia e outras", text: "Terapias complementares indicadas no relatório médico." },
+      { icon: Building2, title: "Rede sem especialista", text: "Falta de clínica capacitada na rede, com direito a reembolso." },
+      { icon: Receipt, title: "Coparticipação abusiva", text: "Cobranças por sessão que tornam o tratamento impossível." },
+    ],
+    direitosTitulo: "Terapias para autismo têm cobertura obrigatória, sem limite de sessões",
+    direitos: [
+      "A pessoa com Transtorno do Espectro Autista tem direito a atendimento multidisciplinar, garantido pela Lei Berenice Piana (Lei 12.764/2012). Quem define o tratamento é o médico que acompanha o paciente, e não a operadora.",
+      "Desde 2022, as regras da ANS garantem a cobertura das terapias para transtornos globais do desenvolvimento, como o autismo, pelo método ou técnica indicados pelo médico, e acabaram com o limite de sessões de psicologia, fonoaudiologia, terapia ocupacional e fisioterapia.",
+      "Quando o plano não tem profissional ou clínica capacitada na rede, ele deve oferecer uma alternativa adequada ou custear o atendimento fora dela. E coparticipações que, na prática, inviabilizam o tratamento podem ser questionadas.",
+    ],
+    baseLegal: [
+      { title: "Lei 12.764/2012", text: "Lei Berenice Piana: direitos da pessoa com autismo, incluindo atendimento multidisciplinar." },
+      { title: "Resoluções da ANS de 2022", text: "Cobertura pelo método indicado pelo médico e fim do limite de sessões para essas terapias." },
+      { title: "Lei 14.454/2022", text: "O rol da ANS é referência básica, e tratamentos comprovados podem ser exigidos." },
+    ],
+    documentos: [
+      "Relatório médico com o diagnóstico (CID), as terapias indicadas, o método e a carga horária",
+      "Negativa do plano por escrito, ou o protocolo do pedido",
+      "Carteirinha e, se tiver, o contrato do plano",
+      "Boletos com a coparticipação cobrada, se for o caso",
+      "Recibos de terapias pagas por conta própria, para pedir reembolso",
+    ],
+    faqs: [
+      {
+        question: "O plano pode limitar o número de sessões de terapia?",
+        answer:
+          "Não. Desde 2022, a ANS acabou com o limite de sessões de psicologia, fonoaudiologia, terapia ocupacional e fisioterapia, e as terapias para autismo devem seguir a quantidade indicada pelo médico.",
+      },
+      {
+        question: "O plano pode recusar a terapia ABA ou outro método indicado?",
+        answer:
+          "As regras da ANS garantem a cobertura do método ou técnica indicados pelo médico para o tratamento do autismo. A operadora não pode trocar o método por conta própria.",
+      },
+      {
+        question: "E se não houver clínica ou profissional capacitado na rede?",
+        answer:
+          "O plano deve garantir o atendimento com profissional habilitado. Se não houver na rede, ele deve indicar alternativa adequada ou custear o tratamento fora dela, inclusive por reembolso.",
+      },
+      {
+        question: "A coparticipação nas terapias é permitida?",
+        answer:
+          "A coparticipação pode existir se estiver no contrato, mas não pode ser tão alta a ponto de impedir o tratamento. Valores que, na prática, inviabilizam as terapias podem ser contestados.",
+      },
+      {
+        question: "Paguei as terapias por conta própria. Posso ser ressarcido?",
+        answer:
+          "Se a negativa foi indevida, é possível pedir o reembolso dos valores pagos. Guarde todos os recibos e notas fiscais das sessões.",
+      },
+      {
+        question: "Adultos com autismo também têm esses direitos?",
+        answer:
+          "Sim. Os direitos valem para pessoas com autismo de qualquer idade, sempre a partir da indicação do médico que acompanha o tratamento.",
+      },
+    ],
+    contatoTitulo: "O plano negou as terapias? Fale com a gente.",
+    seo: {
+      title: "Plano de Saúde Negou Terapia para Autismo (TEA) | Advogado | Di Garcia Advocacia",
+      description:
+        "Plano de saúde negou ou limitou terapia ABA, fono, TO ou psicologia para autismo (TEA)? Atuação especializada com pedido de liminar. Atendimento em todo o Brasil.",
     },
   },
 

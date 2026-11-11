@@ -21,6 +21,7 @@ const planos = [
 const problemas = [
   "Medicamento negado",
   "Cirurgia ou exame negado",
+  "Terapias para autismo (TEA)",
   "Home care negado",
   "Internação negada",
   "Reajuste abusivo",
