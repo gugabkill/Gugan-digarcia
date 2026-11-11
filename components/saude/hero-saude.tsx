@@ -7,7 +7,7 @@ import { HeartPulse, Phone, Scale, Zap, MapPin, FileSearch, Lock, FileText, Clip
 import { WA_SAUDE } from "@/lib/saude"
 
 const pilares = [
-  { icon: Zap, title: "Urgência", label: "Liminar quando o caso exige" },
+  { icon: Zap, title: "Urgência 24h", label: "Plantão pelo WhatsApp" },
   { icon: FileSearch, title: "Análise", label: "Contrato e negativa" },
   { icon: MapPin, title: "Brasil", label: "Atendimento online" },
   { icon: Lock, title: "Sigilo", label: "Dados protegidos" },

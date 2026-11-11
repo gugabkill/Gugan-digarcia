@@ -33,11 +33,14 @@ const tipos = ["Individual ou familiar", "Empresarial (CNPJ ou MEI)", "Coletivo 
 const field =
   "w-full rounded-xl bg-[#0b0b38]/70 border border-[#D2D3D5]/15 px-4 py-3 text-[#D2D3D5] placeholder:text-[#848688] focus:outline-none focus:border-[#D2D3D5]/50 transition-colors"
 
-export function ContatoSaude() {
+export function ContatoSaude({
+  defaultProblema = "",
+  title = "Recebeu uma negativa? Não desista do seu tratamento.",
+}: { defaultProblema?: string; title?: string } = {}) {
   const [nome, setNome] = useState("")
   const [plano, setPlano] = useState("")
   const [tipo, setTipo] = useState("")
-  const [problema, setProblema] = useState("")
+  const [problema, setProblema] = useState(defaultProblema)
   const [urgente, setUrgente] = useState(false)
 
   const href = useMemo(() => {
@@ -70,7 +73,7 @@ export function ContatoSaude() {
               Fale com a gente
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6 text-balance">
-              Recebeu uma negativa? Não desista do seu tratamento.
+              {title}
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8">
               Conte em poucos passos o que aconteceu. A mensagem já chega pronta no nosso WhatsApp e a análise inicial
@@ -81,7 +84,7 @@ export function ContatoSaude() {
                 <Phone className="w-5 h-5 text-[#D2D3D5]" /> (61) 99185-0093, WhatsApp e ligações
               </div>
               <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-[#D2D3D5]" /> Segunda a sexta, das 9h às 18h
+                <Clock className="w-5 h-5 text-[#D2D3D5]" /> Casos urgentes: 24 horas, todos os dias. Demais casos: segunda a sexta, das 9h às 18h
               </div>
               <div className="flex items-center gap-3">
                 <Lock className="w-5 h-5 text-[#D2D3D5]" /> Atendimento sigiloso, protegido pela LGPD
