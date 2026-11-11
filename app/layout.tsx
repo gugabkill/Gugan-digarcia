@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   },
 
   title: {
-    default: "Dr. Gugan Pimentel Di Garcia",
-    template: "%s | Dr. Gugan Pimentel Di Garcia - Advogado de Trânsito",
+    default: "Di Garcia Advocacia e Consultoria",
+    template: "%s | Di Garcia Advocacia",
   },
 
   description:
-    "Advogado especialista em Direito de Trânsito e Veicular em Brasília/DF. Defesa em multas, suspensão e cassação de CNH, busca e apreensão, revisão de financiamento. Atendimento em todo o Brasil. Consulta gratuita.",
+    "Di Garcia Advocacia e Consultoria. Advocacia judicial e administrativa, preventiva e personalizada. Atendimento em todo o Brasil.",
 
   keywords: [
     "advogado de trânsito",
@@ -72,11 +72,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "https://www.digarciadv.com.br",
-    siteName: "Dr. Gugan Pimentel Di Garcia - Advogado de Trânsito",
-    title:
-      "Dr. Gugan Pimentel Di Garcia | Advogado Especialista em Direito de Trânsito",
+    siteName: "Di Garcia Advocacia e Consultoria",
+    title: "Di Garcia Advocacia e Consultoria",
     description:
-      "Advogado especialista em Direito de Trânsito e Veicular em Brasília/DF.",
+      "Advocacia judicial e administrativa, preventiva e personalizada. Atendimento em todo o Brasil.",
     images: [
       {
         url: "/gugan-img.jpeg",

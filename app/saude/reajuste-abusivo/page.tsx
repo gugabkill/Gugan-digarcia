@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: "/saude/reajuste-abusivo" },
-  openGraph: { title, description, url: "https://www.digarciadv.com.br/saude/reajuste-abusivo", type: "website" },
+  openGraph: {
+    images: ["/gugan-img.jpeg"], title, description, url: "https://www.digarciadv.com.br/saude/reajuste-abusivo", type: "website" },
 }
 
 export default function Page() {

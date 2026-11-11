@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     canonical: "/servicos/busca-apreensao",
   },
   openGraph: {
+    images: ["/gugan-img.jpeg"],
     title: "Defesa em Busca e Apreensão de Veículo | Dr. Gugan Pimentel",
     description:
       "Advogado especialista em defesa contra busca e apreensão de veículos. Recupere seu veículo e defenda seus direitos.",

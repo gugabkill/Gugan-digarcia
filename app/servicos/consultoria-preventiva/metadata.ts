@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     canonical: "/servicos/consultoria-preventiva",
   },
   openGraph: {
+    images: ["/gugan-img.jpeg"],
     title: "Consultoria e Assistência Jurídica em Trânsito | Dr. Gugan Pimentel",
     description:
       "Consultoria jurídica preventiva em trânsito para motoristas e empresas com frotas. Gestão de multas e segurança jurídica.",

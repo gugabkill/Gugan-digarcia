@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   title: { absolute: p.seo.title },
   description: p.seo.description,
   alternates: { canonical: "/saude/autismo-tea" },
-  openGraph: { title: p.seo.title, description: p.seo.description, url: "https://www.digarciadv.com.br/saude/autismo-tea", type: "website" },
+  openGraph: {
+    images: ["/gugan-img.jpeg"], title: p.seo.title, description: p.seo.description, url: "https://www.digarciadv.com.br/saude/autismo-tea", type: "website" },
 }
 
 export default function Page() {

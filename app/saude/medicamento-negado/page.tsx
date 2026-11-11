@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   title: { absolute: p.seo.title },
   description: p.seo.description,
   alternates: { canonical: "/saude/medicamento-negado" },
-  openGraph: { title: p.seo.title, description: p.seo.description, url: "https://www.digarciadv.com.br/saude/medicamento-negado", type: "website" },
+  openGraph: {
+    images: ["/gugan-img.jpeg"], title: p.seo.title, description: p.seo.description, url: "https://www.digarciadv.com.br/saude/medicamento-negado", type: "website" },
 }
 
 export default function Page() {

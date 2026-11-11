@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Plano de saúde negou medicamento, cirurgia, home care ou aplicou reajuste abusivo? Atuação especializada em Direito da Saúde, com pedido de liminar quando há urgência. Atendimento em todo o Brasil.",
   alternates: { canonical: "/saude" },
   openGraph: {
+    images: ["/gugan-img.jpeg"],
     title: "Direito da Saúde | Di Garcia Advocacia",
     description:
       "Atuação contra negativas e abusos de planos de saúde: medicamentos, cirurgias, home care e reajustes abusivos.",

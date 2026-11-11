@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     canonical: "/servicos/acidentes-transito",
   },
   openGraph: {
+    images: ["/gugan-img.jpeg"],
     title: "Responsabilidade em Acidentes de Trânsito | Dr. Gugan Pimentel",
     description:
       "Advogado especialista em acidentes de trânsito. Defesa de condutores, reparação de danos e negociação com seguradoras.",
