@@ -1,9 +1,11 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
+import { useEffect, useState } from "react"
 import {
   ArrowRight,
   ArrowDown,
+  ArrowUpRight,
   Car,
   HeartPulse,
   Scale,
@@ -83,128 +85,149 @@ const fade = {
   transition: { duration: 0.8 },
 }
 
+const slides = ["/brand/slide-1.jpg", "/brand/slide-2.jpg", "/brand/slide-3.jpg", "/brand/slide-4.jpg"]
+
+function HeroSlides() {
+  const [i, setI] = useState(0)
+  useEffect(() => {
+    const t = setInterval(() => setI((x) => (x + 1) % slides.length), 5500)
+    return () => clearInterval(t)
+  }, [])
+  return (
+    <section id="inicio" className="relative h-[100svh] min-h-[620px] overflow-hidden bg-[#0b0b38]">
+      <AnimatePresence initial={false}>
+        <motion.div
+          key={i}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('${slides[i]}')` }}
+          initial={{ opacity: 0, scale: 1.12 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ opacity: { duration: 1.6 }, scale: { duration: 7, ease: "easeOut" } }}
+        />
+      </AnimatePresence>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b0b38]/90 via-[#0b0b38]/45 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b38]/90 via-transparent to-[#0b0b38]/40" />
+
+      <div className="relative z-10 h-full container mx-auto px-4 flex flex-col justify-end pb-24 md:pb-28">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, delay: 0.3 }}
+          className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium leading-[1.08] text-white max-w-3xl"
+        >
+          Escritório de advocacia <span className="text-[#D2D3D5]/70">e consultoria</span>
+        </motion.h1>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.7 }}
+          className="mt-10 flex items-center gap-4"
+        >
+          <a
+            href="#escritorio"
+            className="group inline-flex items-center gap-3 px-5 py-3 uppercase tracking-[0.2em] text-xs text-[#D2D3D5] hover:text-white transition-colors"
+          >
+            Explore
+            <span className="w-8 h-8 rounded-full border border-[#D2D3D5]/40 flex items-center justify-center group-hover:translate-y-1 transition-transform">
+              <ArrowDown className="w-3.5 h-3.5" />
+            </span>
+          </a>
+          <a
+            href="#contato"
+            className="group inline-flex items-center gap-3 px-5 py-3 uppercase tracking-[0.2em] text-xs text-[#D2D3D5] border border-[#D2D3D5]/25 hover:bg-[#D2D3D5]/10 transition-colors"
+          >
+            Contrate
+            <span className="w-8 h-8 rounded-full border border-[#D2D3D5]/40 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Indicadores */}
+      <div className="absolute z-10 bottom-10 left-4 md:left-auto md:right-12 flex gap-2">
+        {slides.map((_, k) => (
+          <button
+            key={k}
+            aria-label={`Imagem ${k + 1}`}
+            onClick={() => setI(k)}
+            className="relative h-[2px] w-10 md:w-14 bg-[#D2D3D5]/25 overflow-hidden"
+          >
+            {k === i && (
+              <motion.span
+                className="absolute inset-y-0 left-0 bg-[#D2D3D5]"
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 5.5, ease: "linear" }}
+              />
+            )}
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+const valores = [
+  "Atendimento personalizado",
+  "Atuação técnica",
+  "Ética",
+  "Transparência",
+  "Advocacia preventiva",
+  "Atendimento em todo o Brasil",
+  "Rede de advogados parceiros",
+]
+
+function Valores() {
+  const linha = [...valores, ...valores]
+  return (
+    <div className="mt-16 md:mt-24 border-y border-[#11114E]/10 py-6 overflow-hidden">
+      <motion.div
+        className="flex gap-12 whitespace-nowrap w-max"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+      >
+        {linha.map((v, k) => (
+          <span key={k} className="flex items-center gap-12 font-serif text-xl md:text-2xl text-[#11114E]/70">
+            {v}
+            <img src="/brand/monograma.png" alt="" className="h-8 w-auto opacity-70 invert" />
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  )
+}
+
 export function Institucional() {
   return (
     <div className="min-h-screen bg-background">
       <Header menuItems={menu} whatsappLink={WA} />
 
-      {/* Abertura */}
-      <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/brand/escritorio.jpg')" }}
-          initial={{ scale: 1.15 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 14, ease: "easeOut" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0b38] via-[#11114E]/92 to-[#11114E]/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b38] via-transparent to-[#0b0b38]/60" />
+      {/* Abertura: imagens da identidade visual passando */}
+      <HeroSlides />
 
-        <div className="container mx-auto px-4 relative z-10 pt-28 pb-20">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex items-center gap-4 mb-8"
-            >
-              <span className="h-px w-12 bg-[#D2D3D5]/60" />
-              <span className="uppercase tracking-[0.3em] text-xs md:text-sm text-[#D2D3D5]/80">
-                Di Garcia Advocacia e Consultoria
-              </span>
-            </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.35 }}
-              className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.08] text-[#D2D3D5] text-balance"
-            >
-              Advocacia especializada em{" "}
-              <span className="text-transparent bg-gradient-to-r from-[#ffffff] via-[#D2D3D5] to-[#848688] bg-clip-text">
-                Direito de Trânsito
-              </span>{" "}
-              e{" "}
-              <span className="text-transparent bg-gradient-to-r from-[#ffffff] via-[#D2D3D5] to-[#848688] bg-clip-text">
-                Direito da Saúde
-              </span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-8 text-lg md:text-xl text-[#D2D3D5]/75 max-w-2xl leading-relaxed"
-            >
-              Atuação técnica, judicial e administrativa, com atendimento personalizado e presença em todo o Brasil.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4"
-            >
-              <a
-                href="/transito"
-                className="group inline-flex items-center justify-between gap-6 px-7 py-4 rounded-full bg-gradient-to-r from-[#D2D3D5] to-[#848688] text-[#11114E] font-bold hover:scale-[1.03] transition-transform"
-              >
-                <span className="flex items-center gap-3">
-                  <Car className="w-5 h-5" /> Direito de Trânsito
-                </span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="/saude"
-                className="group inline-flex items-center justify-between gap-6 px-7 py-4 rounded-full border border-[#D2D3D5]/40 text-[#D2D3D5] font-bold hover:bg-[#D2D3D5]/10 transition-colors"
-              >
-                <span className="flex items-center gap-3">
-                  <HeartPulse className="w-5 h-5" /> Direito da Saúde
-                </span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </motion.div>
-          </div>
-        </div>
-
-        <motion.a
-          href="#escritorio"
-          aria-label="Rolar para o conteúdo"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-[#D2D3D5]/60 text-xs uppercase tracking-[0.25em]"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          Conheça
-          <ArrowDown className="w-4 h-4" />
-        </motion.a>
-      </section>
-
-      {/* O escritório */}
-      <section id="escritorio" className="bg-white text-[#11114E] py-20 md:py-32">
+      {/* Sobre */}
+      <section id="escritorio" className="bg-white text-[#11114E] pt-20 md:pt-32 pb-14">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-            <motion.div {...fade} className="lg:col-span-3">
-              <span className="uppercase tracking-[0.3em] text-xs text-[#848688]">O escritório</span>
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
+            <motion.div {...fade} className="lg:col-span-3 flex items-start gap-3">
+              <span className="font-serif text-3xl leading-none text-[#848688]">&ldquo;</span>
+              <span className="uppercase tracking-[0.3em] text-xs text-[#848688] pt-2">Sobre</span>
             </motion.div>
             <div className="lg:col-span-9">
-              <motion.h2
-                {...fade}
-                className="font-serif text-3xl md:text-5xl leading-tight font-semibold text-balance"
-              >
-                Advocacia judicial e administrativa,{" "}
-                <span className="text-[#848688]">preventiva e conduzida de forma personalizada.</span>
+              <motion.h2 {...fade} className="font-serif text-3xl md:text-5xl leading-tight font-semibold text-balance">
+                Advocacia judicial e administrativa.{" "}
+                <span className="text-[#848688]">Preventiva e conduzida de forma personalizada.</span>
               </motion.h2>
-              <motion.div {...fade} transition={{ duration: 0.8, delay: 0.15 }} className="mt-10 grid md:grid-cols-2 gap-8 text-[#11114E]/75 text-lg leading-relaxed">
-                <p>
-                  A Di Garcia Advocacia nasceu para oferecer uma atuação próxima e técnica, em que cada cliente é
-                  acompanhado de perto pelo advogado responsável, do primeiro contato até a solução do caso.
-                </p>
-                <p>
-                  Concentramos a nossa atuação em duas áreas, Direito de Trânsito e Direito da Saúde, para conhecer a
-                  fundo cada tema e oferecer estratégias específicas para cada situação.
-                </p>
-              </motion.div>
-              <motion.div {...fade} transition={{ duration: 1, delay: 0.25 }} className="mt-14 h-px bg-gradient-to-r from-[#11114E]/20 via-[#11114E]/10 to-transparent" />
+              <motion.p {...fade} transition={{ duration: 0.8, delay: 0.15 }} className="mt-8 max-w-3xl text-[#11114E]/70 text-lg leading-relaxed">
+                A Di Garcia Advocacia e Consultoria nasceu para oferecer uma advocacia próxima e técnica, em que cada
+                cliente é acompanhado de perto pelo advogado responsável, do primeiro contato até a solução do caso.
+              </motion.p>
             </div>
           </div>
         </div>
+        <Valores />
       </section>
 
       {/* Áreas */}
@@ -213,10 +236,11 @@ export function Institucional() {
           <motion.div {...fade} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
             <div>
               <span className="uppercase tracking-[0.3em] text-xs text-[#848688]">Áreas de atuação</span>
-              <h2 className="font-serif text-3xl md:text-5xl font-semibold mt-4">Onde atuamos</h2>
+              <h2 className="font-serif text-3xl md:text-5xl font-semibold mt-4">Advocacia de excelência</h2>
             </div>
             <p className="text-[#11114E]/70 max-w-md text-lg">
-              Escolha a área do seu caso para conhecer os serviços, os seus direitos e como podemos ajudar.
+              Atuação consultiva e contenciosa, com estudo aprofundado de cada caso e estratégias próprias para cada
+              segmento.
             </p>
           </motion.div>
 
@@ -280,10 +304,13 @@ export function Institucional() {
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#D2D3D5] mt-4 mb-8">Dr. Gugan Pimentel Di Garcia</h2>
               <div className="space-y-5 text-[#D2D3D5]/75 text-lg leading-relaxed">
                 <p>
-                  Fundador da Di Garcia Advocacia, é advogado especialista em Direito de Trânsito e atua também em
-                  Direito da Saúde, na defesa de pacientes e famílias diante de negativas e abusos de planos de saúde.
+                  Fundador da Di Garcia Advocacia e Consultoria, conduz pessoalmente os casos do escritório, com apoio
+                  de uma rede de advogados parceiros.
                 </p>
-                <p>Atuação marcada pela precisão técnica, pela ética e pela busca de soluções eficazes para cada caso.</p>
+                <p>
+                  Seu trabalho é reconhecido pela precisão técnica, pela atuação ética e pela busca constante de soluções
+                  eficazes para cada caso concreto.
+                </p>
               </div>
               <div className="mt-10 space-y-4">
                 {[
@@ -379,7 +406,7 @@ export function Institucional() {
       </section>
 
       <Footer
-        description="Di Garcia Advocacia e Consultoria. Atuação especializada em Direito de Trânsito e em Direito da Saúde. Atendimento em todo o Brasil."
+        description="Di Garcia Advocacia e Consultoria. Advocacia judicial e administrativa, preventiva e personalizada. Atendimento em todo o Brasil."
         services={[
           { label: "Direito de Trânsito", href: "/transito" },
           { label: "Multa de Bafômetro", href: "/servicos/defesa-bafometro" },
