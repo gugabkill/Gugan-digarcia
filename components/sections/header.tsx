@@ -40,8 +40,8 @@ export function Header() {
         <div className="flex items-center space-x-2 md:space-x-3">
           <a href="/" aria-label="Página inicial">
             <img
-              src="/logo-gugan-2.png"
-              alt="Logo Dr. Gugan Pimentel"
+              src="/logo-di-garcia-horizontal.png"
+              alt="Di Garcia Advocacia"
               className="h-10 md:h-12 w-auto object-contain"
             />
           </a>

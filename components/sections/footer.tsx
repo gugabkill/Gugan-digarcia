@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <img src="/logo-gugan-1.png" className="w-80 " alt="" />
+              <img src="/logo-di-garcia-vertical.png" className="w-80" alt="Di Garcia Advocacia" />
               {/* <div>
                 <span className="font-serif font-bold text-xl">Dr. Gugan Pimentel</span>
                 <p className="text-sm text-muted-foreground">Especialista em Direito de Trânsito</p>
