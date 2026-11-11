@@ -4,6 +4,7 @@ import { Montserrat, Lato } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import Script from "next/script"
+import { MetaPixel } from "@/components/meta-pixel"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -131,6 +132,9 @@ export default function RootLayout({
         className={`font-sans ${montserrat.variable} ${lato.variable} antialiased`}
       >
         <Suspense fallback={null}>{children}</Suspense>
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
 
         {/* Structured Data para Google exibir a logo */}
         <script

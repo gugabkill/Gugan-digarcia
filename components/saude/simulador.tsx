@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { Calculator, ChevronDown, MessageCircle, RotateCcw, ShieldCheck, Info } from "lucide-react"
 import { simular, brl, MESES, PRIMEIRO_ANO, type Resultado } from "@/lib/falso-coletivo"
 import { waLink } from "@/lib/saude"
+import { pixelTrack, pixelTrackCustom } from "@/lib/meta-pixel"
 
 type Escolha = "sim" | "nao" | ""
 
@@ -95,7 +96,9 @@ export function Simulador() {
     if (y * 12 + m > anoAtual * 12 + hoje.getMonth()) return setErro("A data de início não pode ser no futuro.")
     if (!ciente) return setErro("Marque a caixa confirmando que o resultado é uma estimativa.")
     setErro("")
-    setRes(simular(vi, va, y, m, hoje))
+    const r = simular(vi, va, y, m, hoje)
+    setRes(r)
+    pixelTrackCustom("SimulacaoConcluida", { pagou_a_mais: r.totalPagoAMais > 0, vidas, familia, cnpj })
     setTimeout(() => resRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50)
   }
 
@@ -313,6 +316,7 @@ export function Simulador() {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
                   <a
                     href={waLink(mensagem)}
+                    onClick={() => pixelTrack("Lead", { content_name: "simulador-falso-coletivo" })}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#11114E] to-[#2C3056] text-white font-bold hover:scale-105 transition-transform"
