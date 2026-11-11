@@ -98,7 +98,7 @@ export function Simulador() {
     setErro("")
     const r = simular(vi, va, y, m, hoje)
     setRes(r)
-    pixelTrackCustom("SimulacaoConcluida", { pagou_a_mais: r.totalPagoAMais > 0, vidas, familia, cnpj })
+    pixelTrackCustom("SimulacaoConcluida")
     setTimeout(() => resRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50)
   }
 
@@ -316,7 +316,7 @@ export function Simulador() {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
                   <a
                     href={waLink(mensagem)}
-                    onClick={() => pixelTrack("Lead", { content_name: "simulador-falso-coletivo" })}
+                    onClick={() => pixelTrack("Lead")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#11114E] to-[#2C3056] text-white font-bold hover:scale-105 transition-transform"

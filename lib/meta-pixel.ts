@@ -1,5 +1,5 @@
 // Pixel do Meta (Gerenciador de Eventos, portfólio Di Garcia)
-export const META_PIXEL_ID = "__PIXEL_ID__"
+export const META_PIXEL_ID = "1399262872003715"
 
 type Fbq = (...args: unknown[]) => void
 

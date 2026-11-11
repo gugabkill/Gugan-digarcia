@@ -23,7 +23,7 @@ export function MetaPixel() {
       const a = (e.target as HTMLElement | null)?.closest?.("a")
       const href = a?.getAttribute("href") || ""
       if (/wa\.me|api\.whatsapp\.com|whatsapp:\/\//.test(href)) {
-        pixelTrack("Contact", { content_name: window.location.pathname })
+        pixelTrack("Contact")
       }
     }
     document.addEventListener("click", onClick, true)
