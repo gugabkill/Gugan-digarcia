@@ -110,13 +110,24 @@ function HeroSlides() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b38]/90 via-transparent to-[#0b0b38]/40" />
 
       <div className="relative z-10 h-full container mx-auto px-4 flex flex-col justify-end pb-24 md:pb-28">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="flex items-center gap-4 mb-6 md:mb-8"
+        >
+          <span className="h-px w-12 bg-[#D2D3D5]/60" />
+          <span className="uppercase tracking-[0.3em] text-xs md:text-sm text-[#D2D3D5]/80">
+            Di Garcia Advocacia e Consultoria
+          </span>
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.3 }}
           className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium leading-[1.08] text-white max-w-3xl"
         >
-          Escritório de advocacia <span className="text-[#D2D3D5]/70">e consultoria</span>
+          Advocacia e consultoria <span className="text-[#D2D3D5]/70">especializada</span>
         </motion.h1>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -146,7 +157,7 @@ function HeroSlides() {
       </div>
 
       {/* Indicadores */}
-      <div className="absolute z-10 bottom-10 left-4 md:left-auto md:right-12 flex gap-2">
+      <div className="absolute z-10 bottom-10 left-4 md:left-auto md:right-32 flex gap-2">
         {slides.map((_, k) => (
           <button
             key={k}
