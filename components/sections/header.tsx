@@ -6,26 +6,32 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 
-export function Header() {
+type MenuItem = { href: string; label: string };
+
+const defaultMenuItems: MenuItem[] = [
+  { href: "#inicio", label: "Início" },
+  { href: "#sobre", label: "Sobre" },
+  { href: "#servicos", label: "Serviços" },
+  { href: "#depoimentos", label: "Depoimentos" },
+  { href: "#contato", label: "Contato" },
+];
+
+export function Header({
+  menuItems = defaultMenuItems,
+  whatsappLink = "https://wa.me/5561991850093?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica.",
+}: {
+  menuItems?: MenuItem[];
+  whatsappLink?: string;
+} = {}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const whatsappLink =
-    "https://wa.me/5561991850093?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica.";
-
-  const menuItems = [
-    { href: "#inicio", label: "Início" },
-    { href: "#sobre", label: "Sobre" },
-    { href: "#servicos", label: "Serviços" },
-    { href: "#depoimentos", label: "Depoimentos" },
-    { href: "#contato", label: "Contato" },
-  ];
 
   const handleMenuClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    e.preventDefault();
     setMobileMenuOpen(false);
+    if (!href.startsWith("#")) return;
+    e.preventDefault();
 
     const element = document.querySelector(href);
     if (element) {

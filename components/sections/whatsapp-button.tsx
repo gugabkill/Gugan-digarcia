@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { MessageCircle } from "lucide-react"
 
-export function WhatsAppButton() {
-  const whatsappLink =
-    "https://wa.me/5561991850093?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica."
+export function WhatsAppButton({
+  whatsappLink = "https://wa.me/5561991850093?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica.",
+}: { whatsappLink?: string } = {}) {
 
   return (
     <div className="fixed bottom-8 right-8 z-50">

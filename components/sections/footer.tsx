@@ -1,6 +1,21 @@
 import { Award, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react"
 
-export function Footer() {
+type FooterLink = { label: string; href?: string }
+
+const defaultServices: FooterLink[] = [
+  { label: "Defesa em Multa de Bafômetro" },
+  { label: "Suspensão e Cassação da CNH" },
+  { label: "Ação Revisional de Financiamento" },
+  { label: "Busca e Apreensão de Veículo" },
+  { label: "Defesas Administrativas" },
+  { label: "Acidentes de Trânsito" },
+  { label: "Consultoria e Assistência" },
+]
+
+export function Footer({
+  description = "Advogado especialista em Direito de Trânsito e Direito Veicular com mais de 5 anos de experiência. Vice-Presidente da Comissão de Direito de Trânsito da OAB/DF.",
+  services = defaultServices,
+}: { description?: string; services?: FooterLink[] } = {}) {
   return (
     <footer className="bg-gradient-to-br from-card to-background border-t border-border/50 py-16">
       <div className="container mx-auto px-4">
@@ -13,10 +28,7 @@ export function Footer() {
                 <p className="text-sm text-muted-foreground">Especialista em Direito de Trânsito</p>
               </div> */}
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Advogado especialista em Direito de Trânsito e Direito Veicular com mais de 5 anos de experiência.
-              Vice-Presidente da Comissão de Direito de Trânsito da OAB/DF.
-            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">{description}</p>
             <div className="flex gap-3">
               {/* <a
                 href="https://instagram.com"
@@ -49,13 +61,11 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">Serviços</h4>
             <ul className="space-y-3 text-muted-foreground text-sm">
-              <li className="hover:text-accent transition-colors cursor-pointer">Defesa em Multa de Bafômetro</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Suspensão e Cassação da CNH</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Ação Revisional de Financiamento</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Busca e Apreensão de Veículo</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Defesas Administrativas</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Acidentes de Trânsito</li>
-              <li className="hover:text-accent transition-colors cursor-pointer">Consultoria e Assistência</li>
+              {services.map((item) => (
+                <li key={item.label} className="hover:text-accent transition-colors cursor-pointer">
+                  {item.href ? <a href={item.href}>{item.label}</a> : item.label}
+                </li>
+              ))}
             </ul>
           </div>
           <div>

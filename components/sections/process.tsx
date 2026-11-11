@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { FileSearch, MessageSquare, Gavel, CheckCircle } from "lucide-react";
 
-const steps = [
+const defaultSteps = [
   {
     icon: MessageSquare,
     number: "01",
@@ -38,9 +38,25 @@ const steps = [
   },
 ];
 
-export function Process() {
+type Step = { icon: typeof MessageSquare; number: string; title: string; description: string; color: string }
+
+export function Process({
+  steps = defaultSteps,
+  id = "processo",
+  title = "Processo de Atendimento",
+  subtitle = "Um processo transparente e eficiente, do primeiro contato até a solução do seu caso",
+  ctaLabel = "Iniciar Consulta Gratuita",
+  ctaHref = "https://wa.me/5561991850093?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica.",
+}: {
+  steps?: Step[]
+  id?: string
+  title?: string
+  subtitle?: string
+  ctaLabel?: string
+  ctaHref?: string
+} = {}) {
   return (
-    <section id="processo" className="py-24 relative overflow-hidden">
+    <section id={id} className="py-24 relative overflow-hidden">
       {/* Background banner with gradient overlay */}
       <div className="absolute inset-0">
         <img
@@ -70,11 +86,10 @@ export function Process() {
             Como Funciona
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#D2D3D5] mb-4">
-            Processo de Atendimento
+            {title}
           </h2>
           <p className="text-[#848688] text-lg max-w-2xl mx-auto">
-            Um processo transparente e eficiente, do primeiro contato até a
-            solução do seu caso
+            {subtitle}
           </p>
         </motion.div>
 
@@ -130,14 +145,14 @@ export function Process() {
           className="text-center mt-16"
         >
           <a
-            href="https://wa.me/5561991850093?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica."
+            href={ctaHref}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Iniciar consulta pelo WhatsApp"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D2D3D5] to-[#848688] text-[#11114E] font-bold rounded-full hover:shadow-2xl hover:shadow-[#D2D3D5]/20 transition-all duration-300 hover:scale-105"
           >
             <MessageSquare className="w-5 h-5" />
-            Iniciar Consulta Gratuita
+            {ctaLabel}
           </a>
         </motion.div>
       </div>

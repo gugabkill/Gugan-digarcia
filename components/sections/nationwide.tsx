@@ -3,7 +3,19 @@
 import { MapPin, Video, Clock, Shield, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export function Nationwide() {
+const defaultItems = [
+  "Defesas administrativas em qualquer DETRAN do Brasil",
+  "Ações judiciais em todas as comarcas",
+  "Acompanhamento de processos online",
+  "Recursos em instâncias superiores",
+  "Consultoria preventiva para todo o país",
+]
+
+export function Nationwide({
+  area = "Direito de Trânsito",
+  items = defaultItems,
+  whatsappLink = "https://wa.me/5561991850093",
+}: { area?: string; items?: string[]; whatsappLink?: string } = {}) {
   return (
     <section className="py-24 bg-gradient-to-b from-[#11114E] to-[#1a1a5e] relative overflow-hidden">
       {/* Background decorative elements */}
@@ -22,7 +34,7 @@ export function Nationwide() {
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-[#D2D3D5] mb-6">Atendimento em Todo o Brasil.  </h2>
           <p className="text-[#848688] text-lg max-w-3xl mx-auto leading-relaxed">
-            Onde quer que você esteja, oferecemos atendimento jurídico especializado em Direito de Trânsito com a mesma
+            Onde quer que você esteja, oferecemos atendimento jurídico especializado em {area} com a mesma
             qualidade e eficiência, utilizando tecnologia para estar sempre próximo.
           </p>
         </div>
@@ -86,13 +98,7 @@ export function Nationwide() {
             </p>
 
             <div className="space-y-4 mb-8">
-              {[
-                "Defesas administrativas em qualquer DETRAN do Brasil",
-                "Ações judiciais em todas as comarcas",
-                "Acompanhamento de processos online",
-                "Recursos em instâncias superiores",
-                "Consultoria preventiva para todo o país",
-              ].map((item, index) => (
+              {items.map((item, index) => (
                 <div
                   key={index}
                   className="flex items-start gap-3 animate-fade-in"
@@ -109,11 +115,13 @@ export function Nationwide() {
                 Não importa onde você esteja, estamos prontos para defender seus direitos.
               </p>
               <Button
+                asChild
                 className="w-full bg-[#D2D3D5] text-[#11114E] hover:bg-[#D2D3D5]/90 font-semibold py-6 text-lg"
-                onClick={() => window.open("https://wa.me/5561991850093", "_blank")}
               >
-                <MapPin className="w-5 h-5 mr-2" />
-                Consulte Sua Região
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                  <MapPin className="w-5 h-5 mr-2" />
+                  Consulte Sua Região
+                </a>
               </Button>
             </div>
           </div>
@@ -128,12 +136,14 @@ export function Nationwide() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
+              asChild
               size="lg"
               className="bg-[#D2D3D5] text-[#11114E] hover:bg-[#D2D3D5]/90 font-semibold"
-              onClick={() => window.open("https://wa.me/5561991850093", "_blank")}
             >
-              <Video className="w-5 h-5 mr-2" />
-              Agendar Consulta Online
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <Video className="w-5 h-5 mr-2" />
+                Agendar Consulta Online
+              </a>
             </Button>
             <Button
               size="lg"

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { ChevronDown, HelpCircle } from "lucide-react"
 
-const faqs = [
+const defaultFaqs = [
   {
     question: "Quanto tempo leva para resolver um processo de defesa de multa?",
     answer:
@@ -47,14 +47,22 @@ const faqs = [
   },
 ]
 
-export function FAQ() {
+type Faq = { question: string; answer: string }
+
+export function FAQ({
+  faqs = defaultFaqs,
+  id = "faq",
+  subtitle = "Respostas para as dúvidas mais comuns sobre direito de trânsito e nossos serviços",
+  backgroundImage = "./traffic-law-background.jpg",
+  ctaHref = "https://wa.me/5561991850093",
+}: { faqs?: Faq[]; id?: string; subtitle?: string; backgroundImage?: string; ctaHref?: string } = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-24 relative overflow-hidden">
+    <section id={id} className="py-24 relative overflow-hidden">
       {/* Background image with traffic law theme */}
       <div className="absolute inset-0 z-0">
-        <img src="./traffic-law-background.jpg" alt="Traffic Law Background" className="w-full h-full object-cover" />
+        <img src={backgroundImage} alt="Traffic Law Background" className="w-full h-full object-cover" />
         {/* Multiple gradient overlays for depth and readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#11114E]/95 via-[#11114E]/90 to-[#1a1a5e]/95" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#11114E] via-transparent to-[#11114E]/50" />
@@ -80,7 +88,7 @@ export function FAQ() {
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#D2D3D5] mb-4">Perguntas Frequentes</h2>
           <p className="text-[#848688] text-lg max-w-2xl mx-auto">
-            Respostas para as dúvidas mais comuns sobre direito de trânsito e nossos serviços
+            {subtitle}
           </p>
         </motion.div>
 
@@ -146,7 +154,9 @@ export function FAQ() {
               Entre em contato conosco e teremos prazer em esclarecer todas as suas dúvidas
             </p>
             <a
-              href="https://wa.me/5561991850093"
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D2D3D5] to-[#848688] text-[#11114E] font-bold rounded-full hover:shadow-2xl hover:shadow-[#D2D3D5]/20 transition-all duration-300 hover:scale-105"
             >
               Falar com Especialista
