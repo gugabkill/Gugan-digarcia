@@ -18,6 +18,17 @@ function parseValor(s: string) {
   return Number.isFinite(n) ? n : NaN
 }
 
+// Envio do resultado por e-mail (FormSubmit). O primeiro envio pede a ativação no e-mail de destino.
+const EMAIL_ENDPOINT = "https://formsubmit.co/ajax/gumido@hotmail.com"
+
+function mascaraTelefone(s: string) {
+  const d = s.replace(/\D/g, "").slice(0, 11)
+  if (d.length <= 2) return d ? `(${d}` : ""
+  if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`
+  if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`
+  return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`
+}
+
 function mascara(s: string) {
   const d = s.replace(/\D/g, "").slice(0, 9)
   if (!d) return ""
@@ -75,7 +86,10 @@ export function Simulador() {
   const [ano, setAno] = useState("")
   const [inicial, setInicial] = useState("")
   const [atual, setAtual] = useState("")
+  const [nome, setNome] = useState("")
+  const [telefone, setTelefone] = useState("")
   const [ciente, setCiente] = useState(false)
+  const [contato, setContato] = useState(false)
   const [erro, setErro] = useState("")
   const [res, setRes] = useState<Resultado | null>(null)
   const [tabela, setTabela] = useState(false)
@@ -94,11 +108,39 @@ export function Simulador() {
     const m = Number(mes)
     const y = Number(ano)
     if (y * 12 + m > anoAtual * 12 + hoje.getMonth()) return setErro("A data de início não pode ser no futuro.")
+    if (nome.trim().length < 2) return setErro("Informe o seu nome.")
+    const tel = telefone.replace(/\D/g, "")
+    if (tel.length < 10) return setErro("Informe o seu WhatsApp com DDD.")
     if (!ciente) return setErro("Marque a caixa confirmando que o resultado é uma estimativa.")
+    if (!contato) return setErro("Marque a caixa autorizando o contato do escritório.")
     setErro("")
     const r = simular(vi, va, y, m, hoje)
     setRes(r)
     pixelTrackCustom("SimulacaoConcluida")
+    pixelTrack("Lead")
+    fetch(EMAIL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `Nova simulação de falso coletivo: ${nome.trim()}`,
+        _template: "table",
+        _captcha: "false",
+        Nome: nome.trim(),
+        WhatsApp: telefone,
+        "Link do WhatsApp": `https://wa.me/55${tel}`,
+        "Plano no CNPJ ou MEI": cnpj === "sim" ? "Sim" : "Não",
+        "Pessoas no plano": vidas,
+        "Todos da mesma família": familia === "sim" ? "Sim" : "Não",
+        Operadora: operadora.trim() || "Não informada",
+        "Início do contrato": `${MESES[m]}/${y}`,
+        "Mensalidade inicial": brl(vi),
+        "Mensalidade atual": brl(va),
+        "Pelo teto da ANS seria": brl(r.mensalidadePelaAns),
+        "Diferença por mês": brl(r.diferencaMensal),
+        "Estimativa paga a mais (36 meses)": brl(r.totalPagoAMais),
+        Origem: typeof window !== "undefined" ? window.location.href : "",
+      }),
+    }).catch(() => {})
     setTimeout(() => resRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50)
   }
 
@@ -126,7 +168,7 @@ export function Simulador() {
 
   const mensagem = res
     ? [
-        "Olá! Fiz a simulação de reajuste do plano de saúde no site.",
+        `Olá! Sou ${nome.trim()} e fiz a simulação de reajuste do plano de saúde no site.`,
         `Plano no CNPJ ou MEI: ${cnpj === "sim" ? "sim" : "não"}`,
         `Pessoas no plano: ${vidas}`,
         `Todos da mesma família: ${familia === "sim" ? "sim" : "não"}`,
@@ -227,9 +269,37 @@ export function Simulador() {
                 <p className="text-xs text-[#5b5f7a]">O valor total do último boleto.</p>
               </div>
             </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <label className="font-semibold text-[#11114E]">8. Seu nome</label>
+                <input className={field} autoComplete="name" placeholder="Nome completo" value={nome} onChange={(e) => setNome(e.target.value)} />
+              </div>
+              <div className="space-y-2">
+                <label className="font-semibold text-[#11114E]">9. Seu WhatsApp</label>
+                <input
+                  className={field}
+                  type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel-national"
+                  placeholder="(00) 00000-0000"
+                  value={telefone}
+                  onChange={(e) => setTelefone(mascaraTelefone(e.target.value))}
+                />
+              </div>
+            </div>
             <label className="flex items-start gap-3 text-sm text-[#5b5f7a] cursor-pointer select-none">
               <input type="checkbox" checked={ciente} onChange={(e) => setCiente(e.target.checked)} className="w-5 h-5 mt-0.5 accent-[#11114E]" />
               Entendo que o resultado é uma estimativa e não substitui a análise de um advogado.
+            </label>
+            <label className="flex items-start gap-3 text-sm text-[#5b5f7a] cursor-pointer select-none">
+              <input type="checkbox" checked={contato} onChange={(e) => setContato(e.target.checked)} className="w-5 h-5 mt-0.5 accent-[#11114E]" />
+              <span>
+                Autorizo o escritório a receber os dados desta simulação e a entrar em contato comigo, conforme a{" "}
+                <a href="/privacidade" target="_blank" className="underline">
+                  Política de Privacidade
+                </a>
+                .
+              </span>
             </label>
             {erro && <p className="text-sm font-semibold text-red-600">{erro}</p>}
             <button
@@ -259,8 +329,8 @@ export function Simulador() {
             <div className="rounded-2xl border border-[#11114E]/10 bg-[#f5f6fa] p-6 flex gap-3">
               <ShieldCheck className="w-6 h-6 text-[#11114E] flex-shrink-0" />
               <p className="text-sm text-[#5b5f7a]">
-                O cálculo é feito no seu próprio aparelho. Nenhum dado é enviado ao escritório, a não ser que você
-                decida mandar o resultado pelo WhatsApp.
+                Seus dados são usados apenas para um advogado analisar o seu caso e falar com você, e ficam protegidos
+                pelo sigilo profissional.
               </p>
             </div>
           </motion.aside>
@@ -316,7 +386,6 @@ export function Simulador() {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
                   <a
                     href={waLink(mensagem)}
-                    onClick={() => pixelTrack("Lead")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#11114E] to-[#2C3056] text-white font-bold hover:scale-105 transition-transform"
