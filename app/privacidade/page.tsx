@@ -28,9 +28,9 @@ const secoes: { titulo: string; corpo: React.ReactNode }[] = [
           seu caso, como operadora do plano, tipo de contrato, número de beneficiários e valor da mensalidade.
         </li>
         <li>
-          <strong>Simulador:</strong> os valores digitados no simulador de reajuste são calculados no seu próprio
-          navegador e não ficam guardados conosco. Só recebemos essas informações se você decidir enviá-las pelo
-          WhatsApp.
+          <strong>Simulador:</strong> no simulador de reajuste, pedimos o seu nome e WhatsApp. Ao clicar em simular,
+          esses dados e os valores informados são enviados ao escritório por e-mail, para que um advogado analise o seu
+          caso e entre em contato com você.
         </li>
         <li>
           <strong>Dados de navegação:</strong> páginas visitadas, cliques e informações do dispositivo, coletados por
@@ -63,7 +63,7 @@ const secoes: { titulo: string; corpo: React.ReactNode }[] = [
     corpo: (
       <p>
         Não vendemos dados pessoais. Só compartilhamos com os fornecedores necessários ao atendimento (Meta, Google,
-        WhatsApp e hospedagem do site) ou quando a lei ou uma ordem judicial exigir. As informações do seu caso também
+        WhatsApp, serviço de envio de formulários por e-mail e hospedagem do site) ou quando a lei ou uma ordem judicial exigir. As informações do seu caso também
         estão protegidas pelo sigilo profissional da advocacia.
       </p>
     ),
