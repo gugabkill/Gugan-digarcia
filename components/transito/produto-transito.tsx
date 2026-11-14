@@ -26,6 +26,7 @@ import { FAQ } from "@/components/sections/faq"
 import { Testimonials } from "@/components/sections/testimonials"
 import { AdvogadoResponsavel } from "@/components/sections/advogado-responsavel"
 import { ContatoTransito } from "@/components/transito/contato-transito"
+import { FormLead } from "@/components/transito/form-lead"
 import { transitoProdutos, transitoMenu, transitoLinks, produtoTransitoWa } from "@/lib/transito-produtos"
 
 const badge =
@@ -175,6 +176,8 @@ export function ProdutoTransito({ slug }: { slug: string }) {
           </motion.div>
         </div>
       </section>
+
+      {p.slug === "defesa-bafometro" && <FormLead produto="bafômetro" whatsappLink={wa} />}
 
       {/* Casos */}
       <section id="casos" className="scroll-mt-24 py-16 md:py-24 relative overflow-hidden">
