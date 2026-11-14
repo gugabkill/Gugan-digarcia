@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Scale, Phone, Award, HeartPulse, MapPin, Landmark, FileCheck2, ArrowRight } from "lucide-react"
+import { CheckCircle, Scale, Phone, Award, HeartPulse, MapPin, Landmark, FileCheck2, ArrowRight, MessageCircle } from "lucide-react"
 import { Header } from "@/components/sections/header"
 import { Footer } from "@/components/sections/footer"
 import { WhatsAppButton } from "@/components/sections/whatsapp-button"
@@ -70,9 +70,9 @@ export function ProdutoPage({ slug }: { slug: string }) {
                     variant="outline"
                     className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-card/50 backdrop-blur-sm w-full sm:w-auto"
                   >
-                    <a href="tel:+5561991850093">
-                      <Phone className="w-4 h-4 mr-2" />
-                      (61) 99185-0093
+                    <a href={wa} target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Falar no WhatsApp
                     </a>
                   </Button>
                 </motion.div>

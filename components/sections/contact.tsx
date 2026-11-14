@@ -148,10 +148,10 @@ export function Contact() {
                 <Button
                   variant="outline"
                   className="w-full border-2 border-primary/50 hover:bg-primary/10 hover:scale-105 transition-all duration-300 text-lg py-6 bg-transparent"
-                  onClick={() => (window.location.href = "tel:+5561991850093")}
+                  onClick={() => window.open("https://wa.me/5561991850093", "_blank")}
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Ligar Agora
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Chamar no WhatsApp
                 </Button>
               </motion.div>
             </motion.div>

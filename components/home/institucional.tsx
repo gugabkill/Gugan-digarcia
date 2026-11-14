@@ -405,12 +405,6 @@ export function Institucional() {
                 <MessageCircle className="w-5 h-5" />
                 Falar pelo WhatsApp
               </a>
-              <a
-                href="tel:+5561991850093"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-[#D2D3D5]/40 text-[#D2D3D5] font-bold hover:bg-[#D2D3D5]/10 transition-colors"
-              >
-                (61) 99185-0093
-              </a>
             </div>
           </motion.div>
         </div>

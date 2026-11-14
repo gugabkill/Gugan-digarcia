@@ -1,6 +1,6 @@
 "use client"
 
-import { MapPin, Video, Clock, Shield, CheckCircle } from "lucide-react"
+import { MapPin, Video, Clock, Shield, CheckCircle, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const defaultItems = [
@@ -149,10 +149,10 @@ export function Nationwide({
               size="lg"
               variant="outline"
               className="border-[#D2D3D5] text-[#D2D3D5] hover:bg-[#D2D3D5]/10 bg-transparent"
-              onClick={() => window.open("tel:+5561991850093", "_blank")}
+              onClick={() => window.open(whatsappLink, "_blank")}
             >
-              <Clock className="w-5 h-5 mr-2" />
-              Ligar Agora
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Falar no WhatsApp
             </Button>
           </div>
         </div>

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { HeartPulse, Phone, Scale, Zap, MapPin, FileSearch, Lock, FileText, ClipboardList, Receipt, Stethoscope } from "lucide-react"
+import { HeartPulse, Phone, Scale, Zap, MapPin, FileSearch, Lock, FileText, ClipboardList, Receipt, Stethoscope, MessageCircle } from "lucide-react"
 import { WA_SAUDE } from "@/lib/saude"
 
 const pilares = [
@@ -121,9 +121,9 @@ export function HeroSaude() {
                   variant="outline"
                   className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-card/50 backdrop-blur-sm transition-all duration-300 w-full sm:w-auto"
                 >
-                  <a href="tel:+5561991850093">
-                    <Phone className="w-4 h-4 mr-2" />
-                    (61) 99185-0093
+                  <a href={WA_SAUDE} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Falar no WhatsApp
                   </a>
                 </Button>
               </motion.div>

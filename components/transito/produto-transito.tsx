@@ -16,6 +16,7 @@ import {
   AlertTriangle,
   Search,
   TimerReset,
+  MessageCircle,
 } from "lucide-react"
 import { Header } from "@/components/sections/header"
 import { Footer } from "@/components/sections/footer"
@@ -84,9 +85,9 @@ export function ProdutoTransito({ slug }: { slug: string }) {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button asChild size="lg" variant="outline" className="border-[#D2D3D5]/50 text-[#D2D3D5] hover:bg-[#D2D3D5]/10 bg-transparent w-full sm:w-auto">
-                    <a href="tel:+5561991850093">
-                      <Phone className="w-4 h-4 mr-2" />
-                      (61) 99185-0093
+                    <a href={wa} target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Falar no WhatsApp
                     </a>
                   </Button>
                 </motion.div>
