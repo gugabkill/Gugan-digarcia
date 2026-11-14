@@ -117,7 +117,10 @@ export function Simulador() {
     const r = simular(vi, va, y, m, hoje)
     setRes(r)
     pixelTrackCustom("SimulacaoConcluida")
-    pixelTrack("Lead")
+    // Só conta como Lead para o Meta quem tem o perfil do falso coletivo (plano no CNPJ ou MEI),
+    // para a campanha aprender com os casos certos. Os demais seguem para o e-mail normalmente.
+    if (cnpj === "sim") pixelTrack("Lead")
+    else pixelTrackCustom("SimulacaoSemPerfil")
     fetch(EMAIL_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -154,7 +157,8 @@ export function Simulador() {
   if (res) {
     if (cnpj === "nao")
       avisos.push(
-        "Como o plano não está no nome de empresa ou MEI, a tese do falso coletivo provavelmente não se aplica. Ainda assim, o reajuste pode ser analisado por outros motivos.",
+        "Pelo que você informou, o seu plano não parece ser um “falso coletivo”.",
+        "Mas planos individuais e por adesão também podem ter reajustes abusivos, principalmente por mudança de faixa etária. Se o seu plano subiu muito, um advogado pode analisar o seu caso sem compromisso.",
       )
     if (familia === "nao") avisos.push("Como nem todos são da mesma família, o caso precisa de uma análise mais detalhada.")
     if (vidas === "11 a 29" || vidas === "30 ou mais")
