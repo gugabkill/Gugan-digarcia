@@ -21,12 +21,24 @@ function parseValor(s: string) {
 // Envio do resultado por e-mail (FormSubmit). O primeiro envio pede a ativação no e-mail de destino.
 const EMAIL_ENDPOINT = "https://formsubmit.co/ajax/gumido@hotmail.com"
 
+// Aceita o número com ou sem o código do país (55): se vier com mais de 11 dígitos começando
+// por 55, o 55 é descartado, e sempre fica DDD + número.
+function soDigitosTelefone(s: string) {
+  let d = s.replace(/\D/g, "")
+  if (d.length > 11 && d.startsWith("55")) d = d.slice(2)
+  return d.slice(0, 11)
+}
+
 function mascaraTelefone(s: string) {
-  const d = s.replace(/\D/g, "").slice(0, 11)
+  const d = soDigitosTelefone(s)
   if (d.length <= 2) return d ? `(${d}` : ""
   if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`
   if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`
   return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`
+}
+
+function brl0(n: number) {
+  return n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 })
 }
 
 function mascara(s: string) {
@@ -111,6 +123,8 @@ export function Simulador() {
     if (nome.trim().length < 2) return setErro("Informe o seu nome.")
     const tel = telefone.replace(/\D/g, "")
     if (tel.length < 10) return setErro("Informe o seu WhatsApp com DDD.")
+    if (tel.length === 11 && tel[2] !== "9")
+      return setErro("Confira o seu WhatsApp: informe só o DDD e o número, sem o +55.")
     if (!ciente) return setErro("Marque a caixa confirmando que o resultado é uma estimativa.")
     if (!contato) return setErro("Marque a caixa autorizando o contato do escritório.")
     setErro("")
@@ -352,16 +366,38 @@ export function Simulador() {
               className="max-w-6xl mx-auto mt-10 scroll-mt-28"
             >
               <div className="rounded-3xl border border-[#11114E]/25 bg-white shadow-[0_20px_60px_-25px_rgba(17,17,78,0.35)] p-6 md:p-10 shadow-2xl">
-                <div className="text-center mb-8">
-                  <div className="text-sm uppercase tracking-widest text-[#5b5f7a] mb-2">
-                    Você pode ter pago a mais, entre {MESES[res.periodoInicio.mes]}/{res.periodoInicio.ano} e{" "}
-                    {MESES[res.periodoFim.mes]}/{res.periodoFim.ano}
+                {res.diferencaMensal > 0 ? (
+                  <div className="text-center mb-8 space-y-2">
+                    <div className="text-sm uppercase tracking-widest text-[#5b5f7a]">Hoje você paga cerca de</div>
+                    <div className="font-serif font-bold text-4xl md:text-6xl text-[#11114E]">
+                      {brl0(res.diferencaMensal)} <span className="text-2xl md:text-3xl">por mês</span>
+                    </div>
+                    <div className="text-base md:text-lg text-[#11114E]">acima do limite da ANS.</div>
+                    {res.mensalidadePelaAns > 0 && (
+                      <p className="text-sm md:text-base text-[#11114E]/80 max-w-2xl mx-auto">
+                        Isso é {Math.round((parseValor(atual) / res.mensalidadePelaAns - 1) * 100)}% a mais do que
+                        pagaria um plano familiar com o mesmo histórico de reajustes.
+                      </p>
+                    )}
+                    <p className="text-sm text-[#5b5f7a] max-w-2xl mx-auto">
+                      Nos últimos 3 anos, essa diferença pode somar cerca de {brl0(res.totalPagoAMais)}.
+                    </p>
+                    <p className="text-xs text-[#5b5f7a] max-w-2xl mx-auto">
+                      Valor estimado com base nas informações que você preencheu. O valor real depende da análise do
+                      contrato e dos boletos.
+                    </p>
                   </div>
-                  <div className="font-serif font-bold text-4xl md:text-6xl text-[#11114E]">
-                    <Contador valor={res.totalPagoAMais} />
+                ) : (
+                  <div className="text-center mb-8 space-y-2">
+                    <div className="font-serif font-bold text-2xl md:text-3xl text-[#11114E]">
+                      Pelos valores informados, a sua mensalidade não está acima do limite da ANS.
+                    </div>
+                    <p className="text-sm text-[#5b5f7a] max-w-2xl mx-auto">
+                      Valor estimado com base nas informações que você preencheu. O valor real depende da análise do
+                      contrato e dos boletos.
+                    </p>
                   </div>
-                  <div className="text-sm text-[#5b5f7a] mt-2">Estimativa da soma das diferenças nos últimos 36 meses</div>
-                </div>
+                )}
 
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
                   {[
@@ -386,6 +422,32 @@ export function Simulador() {
                     </div>
                   </div>
                 )}
+
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div className="rounded-2xl border border-[#11114E]/15 bg-[#f5f6fa] p-5">
+                    <div className="font-bold text-[#11114E] mb-1">O que acontece agora</div>
+                    <p className="text-sm text-[#11114E]/85 leading-relaxed">
+                      O advogado responsável, Dr. Gugan Di Garcia (OAB/DF 79.271), vai analisar a sua simulação e entrar
+                      em contato pelo WhatsApp <strong>(61) 99185-0093</strong>. Salve o número para reconhecer a mensagem.
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-[#11114E]/15 bg-[#f5f6fa] p-5">
+                    <div className="font-bold text-[#11114E] mb-1">Atenção a golpes</div>
+                    <p className="text-sm text-[#11114E]/85 leading-relaxed">
+                      O escritório nunca pede pagamento para &ldquo;liberar&rdquo; valores de processos. Em caso de dúvida,
+                      confira o registro do advogado no{" "}
+                      <a
+                        href="https://cna.oab.org.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline"
+                      >
+                        Cadastro Nacional dos Advogados
+                      </a>
+                      , no site da OAB.
+                    </p>
+                  </div>
+                </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
                   <a

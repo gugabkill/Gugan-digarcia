@@ -10,8 +10,11 @@ const EMAIL_ENDPOINT = "https://formsubmit.co/ajax/gumido@hotmail.com"
 
 type Gtag = (...args: unknown[]) => void
 
+// Aceita o número com ou sem o código do país (55)
 function mascaraTelefone(v: string) {
-  const d = v.replace(/\D/g, "").slice(0, 11)
+  let d = v.replace(/\D/g, "")
+  if (d.length > 11 && d.startsWith("55")) d = d.slice(2)
+  d = d.slice(0, 11)
   if (d.length <= 2) return d
   if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`
   if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`
@@ -69,6 +72,8 @@ export function FormLead({ produto, whatsappLink }: { produto: string; whatsappL
     const tel = telefone.replace(/\D/g, "")
     if (nome.trim().length < 2) return setErro("Informe o seu nome.")
     if (tel.length < 10) return setErro("Informe o seu WhatsApp com DDD.")
+    if (tel.length === 11 && tel[2] !== "9")
+      return setErro("Confira o seu WhatsApp: informe só o DDD e o número, sem o +55.")
     if (!abordagem) return setErro("Diga o que aconteceu na abordagem.")
     if (!notificacao) return setErro("Diga se já chegou notificação do Detran.")
     if (!autorizo) return setErro("Marque a caixa autorizando o contato pelo WhatsApp.")
